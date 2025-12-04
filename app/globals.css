@@ -4,3 +4,13 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+/* Global gradient overlay class */
+.gradient-overlay {
+  background: #000000; /* fallback color */
+  opacity:1;
+  background: linear-gradient(
+    0deg, 
+    rgba(0, 0, 0, 1) 0%, 
+    rgba(61, 3, 102, 1) 100%
+  );
+}
