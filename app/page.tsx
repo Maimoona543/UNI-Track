@@ -1,6 +1,5 @@
 
 import Card from "./components/Card"
-import University  from "./Data/Data";
 
 
 const page = () => {

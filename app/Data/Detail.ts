@@ -1,5 +1,6 @@
+import { University } from "./Data";
 
- type Detail = {
+type Detail = {
   id: string;
   description: string;
   box1: string;
@@ -25,7 +26,10 @@
   weightage: string[];
   neg: string[];
   title: string;
-  image:string
+  image: string;
+  specialized: string; 
+  founded: number;
+  location: string;
 };
 
 export const Detailed_Data: Detail[] = [
@@ -35,6 +39,9 @@ export const Detailed_Data: Detail[] = [
     title: "NED University of Engineering & Technology",
     description:
       "NED University is one of Pakistan’s most prestigious engineering institutions. Known for its excellence in education, research, and innovation, it provides world-class facilities, experienced faculty, and a diverse academic culture that empowers students to lead in modern technological and industrial landscapes.",
+    specialized: "Engineering & Technology",
+    founded: 1921,
+    location: "Karachi, Sindh",
     box1: "Top Ranked",
     desc1: "Ranked 21st in Pakistan; CS ranked 30th.",
     box2: "Industry Links",
@@ -45,7 +52,7 @@ export const Detailed_Data: Detail[] = [
       "Merit & need-based awards (e.g., Noor Foundation & Alumni scholarships).",
     box4: "Modern Labs",
     desc4: "AI, Robotics, Cloud Computing, and Embedded Systems labs.",
-    employment: "70% - 80%",
+    employment: "70%",
     alumni: "35,000+",
     partners: "20+",
     duration: "120 mins",
@@ -67,6 +74,9 @@ export const Detailed_Data: Detail[] = [
     title: "National University of Computer and Emerging Sciences",
     description:
       "FAST University is Pakistan’s leading institution for Computer Science, Software Engineering, and Emerging Technologies. Known for its research culture, innovation-driven curriculum, and strong industry linkages, FAST nurtures students to become global tech leaders. Its environment blends academic excellence with real-world innovation — making it the ultimate choice for those who want to push the boundaries of technology.",
+    specialized: "Computer Science & Emerging Technologies",
+    founded: 2000, 
+    location: "Islamabad (Main), Lahore, Karachi, Peshawar, Faisalabad",
     box1: "Top Ranked",
     desc1: "Among Pakistan’s top 3 for Computer Science.",
     box2: "Industry Links",
@@ -97,6 +107,9 @@ export const Detailed_Data: Detail[] = [
     title: "Dow University of Health Sciences",
     description:
       "Dow University of Health Sciences (DUHS) is one of Pakistan’s most prestigious medical institutions. Renowned for its state-of-the-art hospitals, innovative research, and globally recognized programs, DUHS provides world-class healthcare education. With a strong focus on practical clinical exposure, ethics, and compassion, Dow graduates are leaders in medicine both locally and internationally. Its modern simulation centers, digital libraries, and top-tier faculty make DUHS a hub for medical excellence.",
+    specialized: "Health Sciences & Medicine",
+    founded: 2003, 
+    location: "Karachi, Sindh",
     box1: "Top Ranked",
     desc1: "Among Pakistan’s leading medical universities.",
     box2: "Research Links",
@@ -128,6 +141,9 @@ export const Detailed_Data: Detail[] = [
     employment: "98%",
     alumni: "15,000+",
     partners: "100+",
+    specialized: "Management, Sciences, & Humanities",
+    founded: 1984,
+    location: "Lahore, Punjab",
     box1: "Top Ranked",
     desc1: "Ranked #1 private university in Pakistan (QS 2025).",
     box2: "Global Links",
@@ -137,7 +153,7 @@ export const Detailed_Data: Detail[] = [
     box4: "Modern Campus",
     desc4: "Cutting-edge labs and smart learning spaces.",
     description:
-      "Dow University of Health Sciences (DUHS) is one of Pakistan’s most prestigious medical institutions. Renowned for its state-of-the-art hospitals, innovative research, and globally recognized programs, DUHS provides world-class healthcare education. With a strong focus on practical clinical exposure, ethics, and compassion, Dow graduates are leaders in medicine both locally and internationally. Its modern simulation centers, digital libraries, and top-tier faculty make DUHS a hub for medical excellence.",
+      "Lahore University of Management Sciences (LUMS) is one of Pakistan’s most prestigious and highly-regarded institutions, offering globally recognized programs across management, science, engineering, and humanities. Known for its academic rigor, research impact, and diverse student body, LUMS is dedicated to nurturing critical thinkers and future leaders. Its environment promotes interdisciplinary learning and intellectual discovery.",
     duration: "Varied",
     Questions: 180,
     Negative: "Unknown",
@@ -158,6 +174,9 @@ export const Detailed_Data: Detail[] = [
     employment: "97%",
     alumni: "30,000+",
     partners: "200+",
+    specialized: "Engineering, IT, & Applied Sciences",
+    founded: 1991,
+    location: "Islamabad (Main), Rawalpindi, Karachi, Risalpur",
     box1: "Top Ranked",
     desc1: "Ranked #1 university in Pakistan (QS 2025).",
     box2: "Global Recognition",
@@ -194,6 +213,9 @@ export const Detailed_Data: Detail[] = [
     title: "Bahria University",
     description:
       "Bahria University is recognized as a top private university in Pakistan, offering high-quality education, advanced research opportunities, and a vibrant academic environment. With modern campuses and strong industry connections, it nurtures talented students to excel in leadership, technology, and innovation.",
+    specialized: "Engineering, Computer Science, & Business",
+    founded: 2000,
+    location: "Islamabad (Main), Karachi, Lahore",
     box1: "Top Ranked",
     desc1: "Among Pakistan’s leading multidisciplinary universities.",
     box2: "Strong Industry Links",
@@ -227,6 +249,9 @@ export const Detailed_Data: Detail[] = [
     title: "Iqra University",
     description:
       "IQRA University is a top private university in Pakistan, known for delivering quality education in business, engineering, and computer science. Its campus provides modern facilities, innovative teaching methods, and a strong emphasis on practical, real-world experience. Students graduate as confident professionals ready to excel in their careers.",
+    specialized: "Business, Computer Science, & Media",
+    founded: 1998,
+    location: "Karachi (Main), Islamabad, Lahore",
     box1: "Top Ranked",
     desc1: "Leading private university for business and tech.",
     box2: "Industry Links",
@@ -265,6 +290,9 @@ export const Detailed_Data: Detail[] = [
     title: "Mehran University of Engineering & Technology",
     description:
       "Mehran University of Engineering & Technology is one of Pakistan’s top engineering universities, renowned for academic excellence, innovative research, and strong industrial partnerships. With state-of-the-art laboratories, international collaborations, and an emphasis on real-world problem solving, MUET empowers students to become leaders in engineering, technology, and applied sciences.",
+    specialized: "Engineering & Applied Sciences",
+    founded: 1977,
+    location: "Jamshoro, Sindh",
     box1: "Top Engineering University",
     desc1: "Among Pakistan’s leading public engineering institutions.",
     box2: "Research Focused",
@@ -297,7 +325,10 @@ export const Detailed_Data: Detail[] = [
     image:"/QUEST.jpeg",
     title: "Quaid-e-Awam University of Engineering, Science & Technology",
     description:
-      "Mehran University of Engineering & Technology is one of Pakistan’s top engineering universities, renowned for academic excellence, innovative research, and strong industrial partnerships. With state-of-the-art laboratories, international collaborations, and an emphasis on real-world problem solving, MUET empowers students to become leaders in engineering, technology, and applied sciences.",
+      "Quaid-e-Awam University of Engineering, Science & Technology (QUEST) is a major public sector university in Sindh, dedicated to providing high-quality technical education. It focuses on engineering, science, and technology programs, contributing significantly to regional development through research and skilled graduates.",
+    specialized: "Engineering & Technology",
+    founded: 1976,
+    location: "Nawabshah, Sindh",
     box1: "Top Ranked",
     desc1: "Leading public engineering university.",
     box2: "Industry Links",
@@ -331,6 +362,9 @@ export const Detailed_Data: Detail[] = [
     title: "University of Karachi",
     description:
       "University of Karachi (UOK) is one of Pakistan’s largest and most prestigious universities. Known for academic excellence, innovative research programs, and a vibrant student community, UOK offers cutting-edge laboratories, strong industry collaborations, and opportunities to excel in science, technology, and humanities. It nurtures leaders and innovators across diverse disciplines.",
+    specialized: "Science, Humanities, & Diverse Fields",
+    founded: 1951,
+    location: "Karachi, Sindh",
     box1: "Top Ranked",
     desc1: "One of Pakistan’s leading public universities.",
     box2: "Diverse Programs",
@@ -369,7 +403,9 @@ export const Detailed_Data: Detail[] = [
     title: "Institute of Business Administration",
     description:
       "Institute of Business Administration (IBA Karachi) is one of Pakistan’s top business schools, recognized for its strong academic programs, research excellence, and industry-oriented curriculum. With a focus on entrepreneurship, management, finance, and data analytics, IBA prepares future leaders through a mix of rigorous academics, experiential learning, and global collaborations.",
-
+    specialized: "Business Administration & Management Sciences",
+    founded: 1955,
+    location: "Karachi, Sindh",
     box1: "Top Ranked",
     desc1: "Pakistan’s leading business institute.",
     box2: "Global Links",
@@ -405,9 +441,12 @@ export const Detailed_Data: Detail[] = [
     id: "GIKI",
     image:"/GIKI.jpg",
     title:
-      "Ghulam Ishaq Khan Institute of Engineering Sciences and Technology(",
+      "Ghulam Ishaq Khan Institute of Engineering Sciences and Technology",
     description:
       "Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI) is one of Pakistan’s top engineering institutions. Known for innovation, advanced research labs, and international collaborations, GIKI develops leaders in engineering, technology, and applied sciences. The campus combines academic rigor with practical problem-solving, producing highly skilled graduates.",
+    specialized: "Engineering & Applied Sciences",
+    founded: 1993,
+    location: "Swabi, Khyber Pakhtunkhwa",
     box1: "Top Ranked",
     desc1: "Pakistan’s leading engineering and tech institute.",
     box2: "Research Focused",
@@ -441,6 +480,9 @@ export const Detailed_Data: Detail[] = [
     title: "COMSATS University Islamabad",
     description:
       "COMSATS University Islamabad (CUI) is one of Pakistan’s most prestigious higher education institutions, known for its excellence in technology, computing, and management sciences. CUI combines strong academic foundations with a focus on innovation and research, producing graduates ready for the global market.",
+    specialized: "IT, Computing, & Engineering",
+    founded: 1998,
+    location: "Islamabad (Main), Lahore, Wah, Abbottabad, etc.",
     box1: "Established",
     desc1: "1998",
     box2: "Campuses",
@@ -468,9 +510,12 @@ export const Detailed_Data: Detail[] = [
   {
     id: "PU",
     image:"/PU.jpeg",
-    title: "University of the Punjab(",
+    title: "University of the Punjab",
     description:
       "The University of the Punjab (PU), established in 1882, is one of Pakistan’s oldest and most prestigious institutions of higher learning. Known for its academic excellence, diverse programs, and strong research output, PU provides an ideal environment for intellectual and personal growth. Its legacy, commitment to innovation, and vibrant student culture make it a top choice for scholars nationwide.",
+    specialized: "Diverse Academics (Arts, Science, Commerce)",
+    founded: 1882,
+    location: "Lahore, Punjab",
     box1: "Founded",
     desc1: "1882",
     box2: "Campuses",
@@ -506,7 +551,9 @@ export const Detailed_Data: Detail[] = [
     title: "Sir Syed University of Engineering & Technology",
     description:
       "Sir Syed University of Engineering & Technology (SSUET) is one of Pakistan’s leading private engineering institutions, emphasizing innovation, applied learning, and modern technological advancement. With strong faculty, advanced labs, and a vision rooted in progress and practicality, SSUET continues to shape competent engineers ready for the future.",
-
+    specialized: "Engineering & Technology",
+    founded: 1993,
+    location: "Karachi, Sindh",
     duration: "120 min",
     Questions: 100,
     Negative: "None",
@@ -532,11 +579,13 @@ export const Detailed_Data: Detail[] = [
   },
   {
     id: "MAJU",
-    image:"/MAJU.png",
+    image:"/MAJU.jpg",
     title: "Muhammad Ali Jinnah University",
     description:
       "Muhammad Ali Jinnah University (MAJU) stands as one of Pakistan’s top-tier private universities, fostering excellence in engineering, computing, and business education. With its blend of modern technology, research innovation, and real-world exposure, MAJU cultivates future-ready professionals who contribute globally in science, innovation, and leadership.",
-
+    specialized: "IT, Computer Science, & Business",
+    founded: 1998,
+    location: "Karachi (Main), Islamabad",
     duration: "90 min",
     Questions: 100,
     Negative: "None",
