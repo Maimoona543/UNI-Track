@@ -31,7 +31,6 @@ type Detail = {
   founded: number;
   location: string;
 };
-
 export const Detailed_Data: Detail[] = [
   {
     id: "NED",
@@ -61,7 +60,7 @@ export const Detailed_Data: Detail[] = [
     Negative: "None",
     Sections: " Mathematics, , Chemistry / Computer, Physics, , English",
     Note: " Duration 2 hours, no negative marking",
-    sub: ["Mathematics", "Chemistry / Computer ", " Physics", " English"],
+    sub: ["Chemistry / Computer ", "Mathematics", " Physics", " English"],
     Ques: [25, 25, 25, 25],
     weightage: ["25%", "25%", "25%", "25%"],
     time: [30, 30, 30, 30],
@@ -94,7 +93,7 @@ export const Detailed_Data: Detail[] = [
     Negative: "Unknown",
     Sections: "Biology, Chemistry, Physics, English",
     Note: "Test covers Biology, Chemistry, Physics & English. Minimum passing marks ~50%",
-    sub: ["Biology", "Chemistry", "Physics", "English"],
+    sub: ["Chemistry", "Biology", "Physics", "English"],
     time: [50, 20, 20, 30],
     Ques: [50, 20, 20, 20],
     weightage: ["50%", "20%", "20%", "10%"],
@@ -127,7 +126,7 @@ export const Detailed_Data: Detail[] = [
     Calculator: "dont know",
     Sections: "Biology, Chemistry, Physics, English",
     Note: "Test covers Biology, Chemistry, Physics & English. Minimum passing marks ~50%",
-    sub: ["Biology", "Chemistry", "Physics", "English"],
+    sub: ["Chemistry", "Biology", "Physics", "English"],
     time: [45, 45, 45, 45],
     Ques: [45, 45, 45, 45],
     weightage: ["25%", "25%", "25%", "25%"],
@@ -160,7 +159,7 @@ export const Detailed_Data: Detail[] = [
     Calculator: "dont know",
     Sections: "Biology, Chemistry, Physics, English",
     Note: "Test covers Biology, Chemistry, Physics & English. Minimum passing marks ~50%.",
-    sub: ["Biology", "Chemistry", "Physics", "English"],
+    sub: ["Chemistry", "Biology", "Physics", "English"],
     time: [45, 45, 45, 45],
     Ques: [45, 45, 45, 45],
     weightage: ["25%", "25%", "25%", "25%"],
@@ -193,11 +192,11 @@ export const Detailed_Data: Detail[] = [
       "Mathematics (40%), Physics (30%), Chemistry / Computer Science (15%), English (10%), Intelligence / Aptitude (5%)",
     Note: "Duration 3 hours, 200 MCQs, no negative marking.",
     sub: [
+      "Chemistry / Computer Science",
+      "Intelligence (Aptitude)",
       "Mathematics",
       "Physics",
-      "Chemistry / Computer Science",
       "English",
-      "Intelligence (Aptitude)",
     ],
     time: [180, 180, 180, 180, 180],
     Ques: [80, 60, 30, 20, 10],
@@ -236,7 +235,7 @@ export const Detailed_Data: Detail[] = [
     Sections: "English, Mathematics, Analytical Skills, General Knowledge",
     Note: "Standard aptitude-based test with 100 MCQs, 1.5 hours.",
 
-    sub: ["English", "Mathematics", "Analytical Skills", "General Knowledge"],
+    sub: ["General Knowledge", "Analytical Skills", "Mathematics", "English"],
     time: [20, 25, 25, 20],
     Ques: [25, 25, 25, 25],
     weightage: ["25%", "25%", "25%", "25%"],
@@ -273,10 +272,10 @@ export const Detailed_Data: Detail[] = [
     Note: "Objective-based test, no negative marking.",
 
     sub: [
-      "English",
-      "Mathematics",
       "Analytical Reasoning",
       "General Knowledge",
+      "Mathematics",
+      "English",
     ],
     time: [25, 30, 20, 15],
     Ques: [30, 30, 20, 10],
@@ -313,7 +312,7 @@ export const Detailed_Data: Detail[] = [
     Sections: "Mathematics, Physics, Chemistry, English",
     Note: "2-hour test, multiple-choice format.",
 
-    sub: ["Mathematics", "Physics", "Chemistry", "English"],
+    sub: ["Mathematics", "Chemistry", "Physics", "English"],
     time: [35, 25, 20, 10],
     Ques: [40, 30, 20, 10],
     weightage: ["40%", "30%", "20%", "10%"],
@@ -349,7 +348,7 @@ export const Detailed_Data: Detail[] = [
     Sections: "Mathematics, Physics, Chemistry, English",
     Note: "Duration 2 hours, ECAT-style test.",
 
-    sub: ["Mathematics", "Physics", "Chemistry", "English"],
+    sub: ["Mathematics", "Chemistry", "Physics", "English"],
     time: [35, 25, 20, 10],
     Ques: [40, 30, 20, 10],
     weightage: ["40%", "30%", "20%", "10%"],
@@ -386,10 +385,10 @@ export const Detailed_Data: Detail[] = [
     Note: "Pattern depends on department; duration ~1.5 hours.",
 
     sub: [
-      "English Comprehension",
-      "General Knowledge",
       "Subject-Specific Section",
+      "English Comprehension",
       "Analytical Reasoning",
+      "General Knowledge",
     ],
     time: [20, 20, 40, 10],
     Ques: [25, 25, 40, 10],
@@ -428,8 +427,8 @@ export const Detailed_Data: Detail[] = [
 
     sub: [
       "English Grammar & Vocabulary",
-      "Quantitative Aptitude",
       "Analytical Reasoning",
+      "Quantitative Aptitude",
     ],
     time: [25, 35, 30],
     Ques: [30, 40, 30],
@@ -467,7 +466,7 @@ export const Detailed_Data: Detail[] = [
     Sections: "Mathematics, Physics, English, Chemistry/Computer Science",
     Note: "Two-hour test, based on conceptual problem-solving.",
 
-    sub: ["Mathematics", "Physics", "English", "Chemistry / Computer Science"],
+    sub: ["Chemistry / Computer Science", "Mathematics", "Physics", "English"],
     time: [45, 35, 20, 20],
     Ques: [40, 30, 15, 15],
     weightage: ["40%", "30%", "15%", "15%"],
@@ -500,7 +499,7 @@ export const Detailed_Data: Detail[] = [
     Calculator: "dont know",
     Sections: "English, , Analytical, , Quantitative, , Subject Area",
     Note: "NAT or own test format; 2-hour duration.",
-    sub: ["English", "Analytical", "Quantitative", "Subject Area"],
+    sub: ["Quantitative", "Subject Area", "Analytical", "English"],
     Ques: [20, 20, 20, 30],
     time: [15, 15, 20, 30],
     weightage: ["20%", "20%", "20%", "40%"],
@@ -534,10 +533,10 @@ export const Detailed_Data: Detail[] = [
     Sections: "English, , Subject Knowledge, , Analytical Skills",
     Note: "Pattern varies by department or faculty.",
     sub: [
-      "English",
-      "Analytical Reasoning",
       "Quantitative / Mathematics",
+      "Analytical Reasoning",
       "Subject Knowledge",
+      "English",
     ],
     Ques: [20, 20, 30, 30],
     time: [20, 20, 30, 30],
@@ -560,7 +559,7 @@ export const Detailed_Data: Detail[] = [
     Calculator: "dont know",
     Sections: "Mathematics, , Physics, , Chemistry, , English",
     Note: "2-hour ECAT-based test; no negative marking.",
-    sub: ["Mathematics", "Physics", "Chemistry", "English"],
+    sub: ["Mathematics", "Chemistry", "Physics", "English"],
     Ques: [40, 30, 20, 10],
     time: [35, 25, 20, 10],
     weightage: ["40%", "30%", "20%", "10%"],
@@ -594,10 +593,10 @@ export const Detailed_Data: Detail[] = [
       "English, , Mathematics, , Analytical Reasoning, , General Knowledge",
     Note: "Objective-based test, 1.5 hours long.",
     sub: [
-      "English",
-      "Mathematics",
       "Analytical Reasoning",
       "General Knowledge",
+       "Mathematics",
+      "English",
     ],
     Ques: [25, 35, 25, 15],
     time: [20, 30, 25, 15],

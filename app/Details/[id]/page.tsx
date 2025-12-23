@@ -86,19 +86,19 @@ className="w-full h-full rounded-3xl object-cover shadow-2xl border-6 bg-linear-
 
 
 
-    <section className={` flex h-120  border-3 rounded-3xl border-[#080840] bg-[#3636ab8b] w-[94%] text-center items-center flex-col`}>
+    <section className={` flex h-full  border-3 rounded-3xl border-[#080840] bg-[#3636ab8b] w-[94%] text-center items-center flex-col`}>
     <h2 className="text-4xl sm:text-6xl mb-1 font-bold w-[90%] tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-cyan-500 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)] pt-5 pb-7  text-center hover:shadow-3xl shadow-cyan-800 ">Why Choose {uni.id}?</h2>
     <p className="w-[89%] text-[#b1afaf] text-xl">{uni.description}</p>
 
 
     {/* boxes - MODIFIED PARENT CONTAINER HERE */}
     {/* Using flex utilities to make sure all children stretch to the height of the tallest item */}
-    <div className="flex justify-between gap-7 px-4 py-7 w-full"> 
+    <div className="flex justify-between gap-7 px-4 py-10 w-full"> 
     
    
     
         {/* box1  */}
-        <div className="flex flex-col border-3 rounded-2xl px-3 py-2 border-[#080840] flex-1 bg-linear-to-bl from-[rgba(41,41,71,1)] to-[rgba(19,19,72,1)]"> 
+        <div className="flex flex-col border-3 rounded-2xl px-3 pt-6  border-[#080840] flex-1 bg-linear-to-bl from-[rgba(41,41,71,1)] to-[rgba(19,19,72,1)]"> 
         {/* flex-1 ensures equal width distribution */}
           <p className="font-bold  text-xl tracking-tight bg-linear-to-r from-cyan-400 via-blue-400 to-blue-500 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)]">{uni.box1}</p>
           <p className=" py-2  text-sm text-slate-300">{uni.desc1}</p>
@@ -164,20 +164,24 @@ className="w-full h-full rounded-3xl object-cover shadow-2xl border-6 bg-linear-
         {/* test info  */}
 
 
-        <section className="bg-[#151531] border-4 py-3 rounded-2xl border-[#080840] w-[94%] my-15">
+        <section className="bg-[#151531] hover:shadow-mxl shadow-blue-500 border-4 py-3 rounded-2xl border-[#080840] w-[94%] my-15">
           <div className="text-center">
-          <h2 className="text-4xl font-bold  tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)] text-center hover:shadow-3xl shadow-cyan-800 py-6">Test Information</h2>
+          <h2 className="text-4xl font-bold  tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)] text-center  py-8">Test Information</h2>
           </div>
 
-          <div className={`grid grid-cols-2 grid-rows-2  gap-4 ml-9 text-blue-400 font-bold text-xl`}>
-            <p >Total Duration: <span className="text-slate-300">{uni.duration}</span></p>
+          <div className={`grid grid-cols-2 grid-rows-2  gap-6 ml-9 text-blue-400 font-bold text-xl`}>
+<p>
+
+    Total Duration: <span className="text-slate-300">{uni.duration}</span>
+  
+</p>
             <p>Questions: <span className="text-slate-300">{uni.Questions}</span></p>
             <p>Calculator: <span className="text-slate-300">{uni.Calculator}</span></p>
             <p>Negative: <span className="text-slate-300">{uni.Negative}</span></p>
           </div>
-          <div className="ml-9 mt-4 text-blue-400 font-bold text-xl">
+          <div className="ml-9 mt-6 text-blue-400 font-bold text-xl">
             <p>Sections: <span className="text-slate-300">{uni.Sections}</span></p>
-            <p className="my-4">Note: <span className="text-slate-300 underline">{uni.Note}</span></p>
+            <p className="my-6">Note: <span className="text-slate-300 underline">{uni.Note}</span></p>
           </div>
         </section>
 
@@ -185,27 +189,46 @@ className="w-full h-full rounded-3xl object-cover shadow-2xl border-6 bg-linear-
 
         <section className="bg-[#151531] border-4 py-3 rounded-2xl border-[#080840]  w-[94%] my-15 text-center">
           <h2 className="py-6 text-3xl font-extrabold tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)] text-center hover:shadow-3xl shadow-cyan-800">Section-Wise Breakdown </h2>
-          <table className="text-center gap-x-1.5">
-          <thead>
-            <tr>
-              <th>Sections</th>
+          <table className="text-center w-full gap-x-2 ">
+          <thead className="">
+              <tr className="text-blue-300  font-extrabold bg-blue-800/40 text-md">             
+              <th className="py-3">Sections</th>
               <th>Questions</th>
               <th>Time</th>
               <th>Weigthage</th>
               <th>Negative</th>
             </tr>
           </thead>
-            <tbody>
-      {uni.sub.map((subject, index) => (
-        <tr key={index}>
-          <td className="">{subject}</td>
-          <td className="">{uni.Ques[index]}</td>
-          <td className="">{uni.time[index]} mins</td>
-          <td className="">{uni.weightage[index]}</td>
-          <td className="">{uni.neg[index]}</td>
-        </tr>
-      ))}
-    </tbody>
+     <tbody className="border-t border-blue-700/50">
+  {uni.sub.map((subject, index) => {
+// check krrhe ka last elemet ha ya nahi ....so nicha ka border hata sakain
+const isLast = index === uni.sub.length - 1;
+
+    return (
+      <tr 
+        key={index} 
+        className="text-slate-300 text-md hover:bg-blue-800/10 "
+      >
+     
+        <td className={`py-4 px-4  ${isLast ? 'border-b-0' : 'border-b border-blue-700/50'}`}>
+          {subject}
+        </td>
+        <td className={`py-4 px-4  text-center ${isLast ? 'border-b-0' : 'border-b border-blue-700/50'}`}>
+          {uni.Ques[index]}
+        </td>
+        <td className={`py-4 px-4  text-center ${isLast ? 'border-b-0' : 'border-b border-blue-700/50'}`}>
+          {uni.time[index]} mins
+        </td>
+        <td className={`py-4 px-4  text-center ${isLast ? 'border-b-0' : 'border-b border-blue-700/50'}`}>
+          {uni.weightage[index]}
+        </td>
+        <td className={`pt-4 px-4  text-center ${isLast ? 'border-b-0' : 'border-b border-blue-700/50'}`}>
+          {uni.neg[index]}
+        </td>
+      </tr>
+    );
+  })}
+</tbody>
           </table>
         </section>
 
