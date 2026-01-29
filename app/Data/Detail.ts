@@ -1,5 +1,3 @@
-import { University } from "./Data";
-
 type Detail = {
   id: string;
   description: string;
@@ -60,7 +58,7 @@ export const Detailed_Data: Detail[] = [
     Negative: "None",
     Sections: " Mathematics, , Chemistry / Computer, Physics, , English",
     Note: " Duration 2 hours, no negative marking",
-    sub: ["Chemistry / Computer ", "Mathematics", " Physics", " English"],
+    sub: ["Chemistry "," Computer ", "Mathematics", " Physics", " English"],
     Ques: [25, 25, 25, 25],
     weightage: ["25%", "25%", "25%", "25%"],
     time: [30, 30, 30, 30],
@@ -101,7 +99,7 @@ export const Detailed_Data: Detail[] = [
   },
 
   {
-    id: "DOW",
+    id: "DUHS",
     image:"/DOW.jpg",
     title: "Dow University of Health Sciences",
     description:
@@ -192,7 +190,7 @@ export const Detailed_Data: Detail[] = [
       "Mathematics (40%), Physics (30%), Chemistry / Computer Science (15%), English (10%), Intelligence / Aptitude (5%)",
     Note: "Duration 3 hours, 200 MCQs, no negative marking.",
     sub: [
-      "Chemistry / Computer Science",
+      "Chemistry" , "Computer Science",
       "Intelligence (Aptitude)",
       "Mathematics",
       "Physics",
@@ -466,7 +464,7 @@ export const Detailed_Data: Detail[] = [
     Sections: "Mathematics, Physics, English, Chemistry/Computer Science",
     Note: "Two-hour test, based on conceptual problem-solving.",
 
-    sub: ["Chemistry / Computer Science", "Mathematics", "Physics", "English"],
+    sub: ["Chemistry ,Computer Science", "Mathematics", "Physics", "English"],
     time: [45, 35, 20, 20],
     Ques: [40, 30, 15, 15],
     weightage: ["40%", "30%", "15%", "15%"],
@@ -533,7 +531,7 @@ export const Detailed_Data: Detail[] = [
     Sections: "English, , Subject Knowledge, , Analytical Skills",
     Note: "Pattern varies by department or faculty.",
     sub: [
-      "Quantitative / Mathematics",
+      "Quantitative" , "Mathematics",
       "Analytical Reasoning",
       "Subject Knowledge",
       "English",
@@ -578,7 +576,7 @@ export const Detailed_Data: Detail[] = [
   },
   {
     id: "MAJU",
-    image:"/MAJU.jpg",
+    image:"/MAJU.png",
     title: "Muhammad Ali Jinnah University",
     description:
       "Muhammad Ali Jinnah University (MAJU) stands as one of Pakistan’s top-tier private universities, fostering excellence in engineering, computing, and business education. With its blend of modern technology, research innovation, and real-world exposure, MAJU cultivates future-ready professionals who contribute globally in science, innovation, and leadership.",

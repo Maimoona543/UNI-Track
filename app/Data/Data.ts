@@ -11,7 +11,7 @@ const Data: University[] = [
     title: "NED University of Engineering & Technology(NED)",
     sub: "Aim high, think smart — your engineering future starts now!",
     description:
-      " The NED Entry Test sharpens your skills in Maths, Physics, Chemistry, English, and Logic, guiding you toward one of Pakistan’s top engineering universities. Stay focused — your dream career is within reach! ",
+      " The NED Entry Test sharpens your skills in Maths, Physics, Chemistry, English, and Logic, guiding you toward one of Pakistan’s top engineering universities. Stay focused! ",
     image: "/NED.jpg",
   },
   {
@@ -42,7 +42,7 @@ const Data: University[] = [
   },
 
   {
-    id:"DUH",
+    id:"DUHS",
     title: "Dow University of Health Sciences (DUHS)",
     sub: "Dream big, heal lives — your medical journey starts here.",
     description:
