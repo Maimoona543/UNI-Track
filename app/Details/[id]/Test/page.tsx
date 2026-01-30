@@ -1,7 +1,6 @@
 "use client";
 import { use, useEffect, useState } from "react";
 import { Detailed_Data } from "@/app/Data/Detail";
-import { select } from "framer-motion/client";
 
 
 const Page = ({ params }: { params: Promise<{ id: string }> }) => {
@@ -91,7 +90,7 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
     const interval = setInterval(() => {
       setTime((prev) => {
         if (prev <= 1) {
-          setFinished(true); // Auto-finish when time runs out
+          setFinished(true); // Auto-finish when time runs out...
           return 0;
         }
         return prev - 1;
@@ -129,11 +128,13 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
 
       {/* First container - subject selection */}
       {!selected && (
-        <div className="bg-black/40 shadow-xl shadow-[#151648] w-[90%]  sm:w-[50%] xl:w-[40%] h-full rounded-3xl">
+        <div className="bg-black/40 shadow-xl shadow-[#161744] w-[90%]  sm:w-[50%] xl:w-[40%] h-full rounded-3xl">
           <section className="flex flex-col text-center items-center py-5 w-full px-9">
-            <h2 className="text-slate-100 text-xl md:text-2xl   xl:text-4xl font-bold mb-6">
+            <h2 className="text-slate-100 text-xl md:text-2xl   xl:text-4xl font-bold ">
               Admission Test Portal {id}
             </h2>
+         <div className="h-0.5 sm:w-30 max-sm:w-10 mt-2 z-10 bg-linear-to-r from-cyan-300 via-blue-600 to-cyan-200 mb-6"></div>
+
 
             <div className="w-full max-w-md flex flex-col">
               <button
@@ -196,19 +197,19 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
 
       {/* Test section - questions */}
       {questions.length > 0 && !finished && (
-        <div className="md:w-[45%] w-[90%] sm:w-[58%] relative text-center">
+        <div className="md:w-[45%]  w-[90%] sm:w-[58%] relative text-center">
           <div className="flex flex-col justify-center items-center mb-7">
             <h2 className="mb-3 md:text-5xl text-3xl  font-bold text-slate-300">
               {sub.length > 1 ? "You chose to start with all subjects" : sub}
             </h2>
-            <div className="bg-black/40 rounded-xl flex flex-row justify-center items-center w-30">
+            <div className="bg-black/40  rounded-xl flex flex-row justify-center items-center w-30">
               <p className="text-cyan-400 py-2 px-4 font-bold">
                 ⏳ {String(Math.floor(time / 60)).padStart(2, "0")}:
                 {String(time % 60).padStart(2, "0")}
               </p>
             </div>
           </div>
-          <div className="w-full h-full bg-black/40 shadow-xl shadow-[#1a1d96]rounded-3xl">
+          <div className="w-full h-full bg-black/40 shadow-xl rounded-2xl shadow-[#1a1d96]rounded-3xl">
             <section className="relative w-full h-full px-8 py-6 text-slate-300">
               <button
                 onClick={() => setFinished(true)}
