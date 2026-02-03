@@ -17,52 +17,27 @@ const hanlde_submit = (e) => {
 const handle_clear = () => {
   setMessages([])
 }
+async function generateAnswer() {
+  if (!question.trim()) return;
+  const currentQuestion = question;
+  setMessages((prev) => [...prev, { role: "user", text: currentQuestion }]);
+  setQuestion("");
+  setLoading(true);
 
-  async function generateAnswer() {
-    if (!question.trim()) return;
-    const currentQuestion = question;
-    setMessages((prev) => [...prev, { role: "user", text: currentQuestion }]);
-    setQuestion("");
-    setLoading(true)
-
-    try {
-      const response = await axios({
-        method: "post",
-        url: "https://api.groq.com/openai/v1/chat/completions",
-        headers: {
-          "Content-Type": "application/json",
-          // Replace with your actual Groq Key
-        "Authorization": `Bearer ${process.env.GROQ_API_KEY}`
-    },
-        data: {
-model: "llama-3.3-70b-versatile",      
-   messages: [
-            {
-              role: "user",
-              content: currentQuestion
-            }
-          ],
-          temperature: 0.7 // Optional: controls creativity
-        }
-      });
-
-      // GROQ RESPONSE STRUCTURE: response.data.choices[0].message.content
-      const result = response.data.choices[0].message.content;
-     
-      setMessages((prev) => [...prev, { role: "bot", text: result }]);
-    } catch (error) {
-      console.error("Groq Error:", error);
-      setMessages("Error: " + (error.response?.data?.error?.message || "Check Console"));
-    }
-    finally{
-      setLoading(false)
-    }
+  try {
+    const response = await axios.post("/api/chat", { question: currentQuestion });
+    setMessages((prev) => [...prev, { role: "bot", text: response.data.result }]);
+  } catch (error) {
+    console.error("Chat Error:", error);
+    setMessages((prev) => [...prev, { role: "bot", text: "Error: " + (error.response?.data?.error || "Something went wrong") }]);
+  } finally {
+    setLoading(false);
   }
+}
 
 
 return (
 
-// ... inside your component
 <div className=''>
   <AnimatePresence mode="wait">
     {show ? (

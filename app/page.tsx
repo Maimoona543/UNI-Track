@@ -37,7 +37,17 @@ const page = () => {
           </div>
           
         </div>
-        <div className="h-0.5 w-full md:mt-18 mt-13 z-10 bg-linear-to-r from-cyan-300 via-blue-600 to-cyan-200 "></div>
+<div className="w-full md:mt-18 mt-13 z-10">
+  <div className="h-0.5 w-full overflow-hidden bg-slate-200">
+    <div
+      className="
+        h-full w-full
+        bg-linear-to-r from-cyan-400 via-blue-700 to-cyan-300
+        progress-bar
+      "
+    ></div>
+  </div>
+</div>
 
 
         <div className="my-5">
@@ -91,16 +101,16 @@ const page = () => {
             aligned with your goals and future career path.
           </h3>
         </div>
-       <h4 className="font-extrabold md:text-3xl text-2xl mt-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)] text-white max-sm:text-center max-sm:w-[50%]">
+       <h4 className="font-extrabold md:text-3xl text-2xl mt-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)] text-white max-sm:text-center max-sm:w-[50%]  ">
         Your Gateway to Excellence
        </h4>
-               <div className="h-0.5 sm:w-30 max-sm:w-10 mt-2 z-10 bg-linear-to-r from-cyan-300 via-blue-600 to-cyan-200 "></div>
+               <div className="h-0.5 sm:w-30 max-sm:w-10 mt-2 z-10 bg-linear-to-r from-cyan-300 via-blue-600 to-cyan-200"></div>
 
         {/* Grid Layout */}
         <div className="grid lg:grid-cols-3 lg:gap-4  gap-4 md:gap-3 md:grid-cols-2 max-sm:mx-2  my-10">
           {filtered.length > 0 ? (
             filtered.map((university, index) => (
-              <Card key={university.id || index} uni={university} />
+              <Card key={university.id || index} uni={university} index={index} />
             ))
           ) : (
             <p className="col-span-full text-center min-h-screen">
