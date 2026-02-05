@@ -100,7 +100,7 @@ export const Detailed_Data: Detail[] = [
 
   {
     id: "DUHS",
-    image:"/DOW.jpg",
+    image:"/DUHS.jpg",
     title: "Dow University of Health Sciences",
     description:
       "Dow University of Health Sciences (DUHS) is one of Pakistan’s most prestigious medical institutions. Renowned for its state-of-the-art hospitals, innovative research, and globally recognized programs, DUHS provides world-class healthcare education. With a strong focus on practical clinical exposure, ethics, and compassion, Dow graduates are leaders in medicine both locally and internationally. Its modern simulation centers, digital libraries, and top-tier faculty make DUHS a hub for medical excellence.",
@@ -383,7 +383,6 @@ export const Detailed_Data: Detail[] = [
     Note: "Pattern depends on department; duration ~1.5 hours.",
 
     sub: [
-      "Subject-Specific Section",
       "English Comprehension",
       "Analytical Reasoning",
       "General Knowledge",
