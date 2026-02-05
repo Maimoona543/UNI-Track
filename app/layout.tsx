@@ -5,8 +5,8 @@ import "./globals.css";
 // Geist Sans
 const geistSans = localFont({
   src: [
-    { path: "./public/fonts/GeistSans-Regular.woff2", weight: "400", style: "normal" },
-    { path: "./public/fonts/GeistSans-Bold.woff2", weight: "700", style: "normal" },
+    { path: "../public/fonts/GeistSans-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/GeistSans-Bold.woff2", weight: "700", style: "normal" },
   ],
   variable: "--font-geist-sans",
 });
@@ -14,8 +14,8 @@ const geistSans = localFont({
 // Geist Mono
 const geistMono = localFont({
   src: [
-    { path: "./public/fonts/GeistMono-Regular.woff2", weight: "400", style: "normal" },
-    { path: "./public/fonts/GeistMono-Bold.woff2", weight: "700", style: "normal" },
+    { path: "../public/fonts/GeistMono-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/GeistMono-Bold.woff2", weight: "700", style: "normal" },
   ],
   variable: "--font-geist-mono",
 });

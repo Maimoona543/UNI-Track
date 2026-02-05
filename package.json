@@ -8,26 +8,24 @@
     "start": "next start",
     "lint": "eslint"
   },
-"dependencies": {
-  "axios": "^1.13.2",
-  "framer-motion": "^10.18.0",
-  "lucide-react": "^0.462.0",
-  "next": "^14.2.0",
-  "react": "^18.2.0",
-  "react-dom": "^18.2.0"
-},
-"devDependencies": {
-  "@tailwindcss/postcss": "^4",
-  "@types/node": "^20",
-  "@types/react": "^18",
-  "@types/react-dom": "^18",
-  "baseline-browser-mapping": "^2.9.6",
-  "eslint": "^8",
-  "eslint-config-next": "14.2.0",
-  "tailwind-scrollbar": "^4.0.2",
-  "tailwindcss": "^4",
-  "typescript": "^5"
-}
-
-
+  "dependencies": {
+    "axios": "^1.13.2",
+    "framer-motion": "^10.18.0",
+    "lucide-react": "^0.462.0",
+    "next": "^16.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "baseline-browser-mapping": "^2.9.6",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.0",
+    "tailwind-scrollbar": "^4.0.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
 }
