@@ -47,7 +47,7 @@ const Data: University[] = [
     sub: "Dream big, heal lives — your medical journey starts here.",
     description:
       "The DOW Entry Test challenges your knowledge in Biology, Chemistry, Physics, and English, shaping future doctors and healthcare leaders ready to make a difference.",
-    image: "/DoW.jpg",
+    image: "/DUHS.jpg",
   },
 
   {
