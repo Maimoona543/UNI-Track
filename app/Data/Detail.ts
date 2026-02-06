@@ -35,7 +35,7 @@ export const Detailed_Data: Detail[] = [
     image: "/NED.jpg",
     title: "NED University of Engineering & Technology",
     description:
-      "NED University is one of Pakistan’s most prestigious engineering institutions. Known for its excellence in education, research, and innovation, it provides world-class facilities, experienced faculty, and a diverse academic culture that empowers students to lead in modern technological and industrial landscapes.",
+      "NED University is one of Pakistan's most prestigious engineering institutions. Known for its excellence in education, research, and innovation, it provides world-class facilities, experienced faculty, and a diverse academic culture that empowers students to lead in modern technological and industrial landscapes.",
     specialized: "Engineering & Technology",
     founded: 1921,
     location: "Karachi, Sindh",
@@ -56,9 +56,9 @@ export const Detailed_Data: Detail[] = [
     Questions: 100,
     Calculator: "Don't Know",
     Negative: "None",
-    Sections: " Mathematics, , Chemistry / Computer, Physics, , English",
-    Note: " Duration 2 hours, no negative marking",
-    sub: ["Chemistry "," Computer ", "Mathematics", " Physics", " English"],
+    Sections: "Mathematics, Chemistry / Computer, Physics, English",
+    Note: "Duration 2 hours, no negative marking",
+    sub: ["Chemistry / Computer", "Mathematics", "Physics", "English"],
     Ques: [25, 25, 25, 25],
     weightage: ["25%", "25%", "25%", "25%"],
     time: [30, 30, 30, 30],
@@ -70,12 +70,12 @@ export const Detailed_Data: Detail[] = [
     image: "/FAST.jpg",
     title: "National University of Computer and Emerging Sciences",
     description:
-      "FAST University is Pakistan’s leading institution for Computer Science, Software Engineering, and Emerging Technologies. Known for its research culture, innovation-driven curriculum, and strong industry linkages, FAST nurtures students to become global tech leaders. Its environment blends academic excellence with real-world innovation — making it the ultimate choice for those who want to push the boundaries of technology.",
+      "FAST University is Pakistan's leading institution for Computer Science, Software Engineering, and Emerging Technologies. Known for its research culture, innovation-driven curriculum, and strong industry linkages, FAST nurtures students to become global tech leaders. Its environment blends academic excellence with real-world innovation — making it the ultimate choice for those who want to push the boundaries of technology.",
     specialized: "Computer Science & Emerging Technologies",
-    founded: 2000, 
+    founded: 2000,
     location: "Islamabad (Main), Lahore, Karachi, Peshawar, Faisalabad",
     box1: "Top Ranked",
-    desc1: "Among Pakistan’s top 3 for Computer Science.",
+    desc1: "Among Pakistan's top 3 for Computer Science.",
     box2: "Industry Links",
     desc2: "Partnerships with 50+ national tech firms.",
     box3: "Scholarships",
@@ -93,22 +93,22 @@ export const Detailed_Data: Detail[] = [
     Note: "Test covers Biology, Chemistry, Physics & English. Minimum passing marks ~50%",
     sub: ["Chemistry", "Biology", "Physics", "English"],
     time: [50, 20, 20, 30],
-    Ques: [50, 20, 20, 20],
+    Ques: [50, 20, 20, 30],
     weightage: ["50%", "20%", "20%", "10%"],
     neg: ["-0.25", "-0.25", "-0.25", "-0.0833"],
   },
 
   {
     id: "DUHS",
-    image:"/DUHS.jpg",
+    image: "/DUHS.jpg",
     title: "Dow University of Health Sciences",
     description:
-      "Dow University of Health Sciences (DUHS) is one of Pakistan’s most prestigious medical institutions. Renowned for its state-of-the-art hospitals, innovative research, and globally recognized programs, DUHS provides world-class healthcare education. With a strong focus on practical clinical exposure, ethics, and compassion, Dow graduates are leaders in medicine both locally and internationally. Its modern simulation centers, digital libraries, and top-tier faculty make DUHS a hub for medical excellence.",
+      "Dow University of Health Sciences (DUHS) is one of Pakistan's most prestigious medical institutions. Renowned for its state-of-the-art hospitals, innovative research, and globally recognized programs, DUHS provides world-class healthcare education. With a strong focus on practical clinical exposure, ethics, and compassion, Dow graduates are leaders in medicine both locally and internationally. Its modern simulation centers, digital libraries, and top-tier faculty make DUHS a hub for medical excellence.",
     specialized: "Health Sciences & Medicine",
-    founded: 2003, 
+    founded: 2003,
     location: "Karachi, Sindh",
     box1: "Top Ranked",
-    desc1: "Among Pakistan’s leading medical universities.",
+    desc1: "Among Pakistan's leading medical universities.",
     box2: "Research Links",
     desc2: "Partnered with top hospitals and labs.",
     box3: "Scholarships",
@@ -121,7 +121,7 @@ export const Detailed_Data: Detail[] = [
     duration: "Varied",
     Questions: 180,
     Negative: "Unknown",
-    Calculator: "dont know",
+    Calculator: "don't know",
     Sections: "Biology, Chemistry, Physics, English",
     Note: "Test covers Biology, Chemistry, Physics & English. Minimum passing marks ~50%",
     sub: ["Chemistry", "Biology", "Physics", "English"],
@@ -150,11 +150,11 @@ export const Detailed_Data: Detail[] = [
     box4: "Modern Campus",
     desc4: "Cutting-edge labs and smart learning spaces.",
     description:
-      "Lahore University of Management Sciences (LUMS) is one of Pakistan’s most prestigious and highly-regarded institutions, offering globally recognized programs across management, science, engineering, and humanities. Known for its academic rigor, research impact, and diverse student body, LUMS is dedicated to nurturing critical thinkers and future leaders. Its environment promotes interdisciplinary learning and intellectual discovery.",
+      "Lahore University of Management Sciences (LUMS) is one of Pakistan's most prestigious and highly-regarded institutions, offering globally recognized programs across management, science, engineering, and humanities. Known for its academic rigor, research impact, and diverse student body, LUMS is dedicated to nurturing critical thinkers and future leaders. Its environment promotes interdisciplinary learning and intellectual discovery.",
     duration: "Varied",
     Questions: 180,
     Negative: "Unknown",
-    Calculator: "dont know",
+    Calculator: "don't know",
     Sections: "Biology, Chemistry, Physics, English",
     Note: "Test covers Biology, Chemistry, Physics & English. Minimum passing marks ~50%.",
     sub: ["Chemistry", "Biology", "Physics", "English"],
@@ -166,7 +166,7 @@ export const Detailed_Data: Detail[] = [
 
   {
     id: "NUST",
-    image:"/NUST.webp",
+    image: "/NUST.webp",
     title: "National University of Sciences & Technology",
     employment: "97%",
     alumni: "30,000+",
@@ -185,16 +185,16 @@ export const Detailed_Data: Detail[] = [
     duration: "180",
     Questions: 200,
     Negative: "None",
-    Calculator: "dont know",
+    Calculator: "don't know",
     Sections:
       "Mathematics (40%), Physics (30%), Chemistry / Computer Science (15%), English (10%), Intelligence / Aptitude (5%)",
     Note: "Duration 3 hours, 200 MCQs, no negative marking.",
     sub: [
-      "Chemistry" , "Computer Science",
-      "Intelligence (Aptitude)",
       "Mathematics",
       "Physics",
+      "Chemistry / Computer Science",
       "English",
+      "Intelligence (Aptitude)",
     ],
     time: [180, 180, 180, 180, 180],
     Ques: [80, 60, 30, 20, 10],
@@ -206,7 +206,7 @@ export const Detailed_Data: Detail[] = [
 
   {
     id: "BU",
-    image:"/BU.jpeg",
+    image: "/BU.jpeg",
     title: "Bahria University",
     description:
       "Bahria University is recognized as a top private university in Pakistan, offering high-quality education, advanced research opportunities, and a vibrant academic environment. With modern campuses and strong industry connections, it nurtures talented students to excel in leadership, technology, and innovation.",
@@ -214,25 +214,22 @@ export const Detailed_Data: Detail[] = [
     founded: 2000,
     location: "Islamabad (Main), Karachi, Lahore",
     box1: "Top Ranked",
-    desc1: "Among Pakistan’s leading multidisciplinary universities.",
+    desc1: "Among Pakistan's leading multidisciplinary universities.",
     box2: "Strong Industry Links",
     desc2: "Collaborations with IT, business, and defense sectors.",
     box3: "Scholarships",
     desc3: "Merit and need-based financial aid available.",
     box4: "Modern Campus",
     desc4: "Smart classrooms and research facilities in major cities.",
-
     employment: "92%",
     alumni: "25,000+",
     partners: "80+",
-
     duration: "90 min",
     Questions: 100,
     Negative: "None",
-    Calculator: "dont know",
+    Calculator: "don't know",
     Sections: "English, Mathematics, Analytical Skills, General Knowledge",
     Note: "Standard aptitude-based test with 100 MCQs, 1.5 hours.",
-
     sub: ["General Knowledge", "Analytical Skills", "Mathematics", "English"],
     time: [20, 25, 25, 20],
     Ques: [25, 25, 25, 25],
@@ -242,7 +239,7 @@ export const Detailed_Data: Detail[] = [
 
   {
     id: "IU",
-    image:"/IU.png",
+    image: "/IU.png",
     title: "Iqra University",
     description:
       "IQRA University is a top private university in Pakistan, known for delivering quality education in business, engineering, and computer science. Its campus provides modern facilities, innovative teaching methods, and a strong emphasis on practical, real-world experience. Students graduate as confident professionals ready to excel in their careers.",
@@ -257,18 +254,15 @@ export const Detailed_Data: Detail[] = [
     desc3: "Merit and need-based aid.",
     box4: "Modern Campus",
     desc4: "Advanced labs and learning spaces.",
-
     employment: "93%",
     alumni: "20,000+",
     partners: "70+",
-
     duration: "90 min",
     Questions: 80,
     Negative: "No",
-    Calculator: "dont know",
+    Calculator: "don't know",
     Sections: "English, Mathematics, Analytical Reasoning, General Knowledge",
     Note: "Objective-based test, no negative marking.",
-
     sub: [
       "Analytical Reasoning",
       "General Knowledge",
@@ -283,33 +277,30 @@ export const Detailed_Data: Detail[] = [
 
   {
     id: "MUET",
-    image:"/MUET.jpeg",
+    image: "/MUET.jpeg",
     title: "Mehran University of Engineering & Technology",
     description:
-      "Mehran University of Engineering & Technology is one of Pakistan’s top engineering universities, renowned for academic excellence, innovative research, and strong industrial partnerships. With state-of-the-art laboratories, international collaborations, and an emphasis on real-world problem solving, MUET empowers students to become leaders in engineering, technology, and applied sciences.",
+      "Mehran University of Engineering & Technology is one of Pakistan's top engineering universities, renowned for academic excellence, innovative research, and strong industrial partnerships. With state-of-the-art laboratories, international collaborations, and an emphasis on real-world problem solving, MUET empowers students to become leaders in engineering, technology, and applied sciences.",
     specialized: "Engineering & Applied Sciences",
     founded: 1977,
     location: "Jamshoro, Sindh",
     box1: "Top Engineering University",
-    desc1: "Among Pakistan’s leading public engineering institutions.",
+    desc1: "Among Pakistan's leading public engineering institutions.",
     box2: "Research Focused",
     desc2: "Strong emphasis on innovation and applied science.",
     box3: "Scholarships",
     desc3: "Merit and need-based opportunities available.",
     box4: "Modern Labs",
     desc4: "Equipped with advanced engineering and computing labs.",
-
     employment: "90%",
     alumni: "35,000+",
     partners: "100+",
-
     duration: "120 min",
     Questions: 100,
     Negative: "None",
-    Calculator: "dont know",
+    Calculator: "don't know",
     Sections: "Mathematics, Physics, Chemistry, English",
     Note: "2-hour test, multiple-choice format.",
-
     sub: ["Mathematics", "Chemistry", "Physics", "English"],
     time: [35, 25, 20, 10],
     Ques: [40, 30, 20, 10],
@@ -319,7 +310,7 @@ export const Detailed_Data: Detail[] = [
 
   {
     id: "QUEST",
-    image:"/QUEST.jpeg",
+    image: "/QUEST.jpeg",
     title: "Quaid-e-Awam University of Engineering, Science & Technology",
     description:
       "Quaid-e-Awam University of Engineering, Science & Technology (QUEST) is a major public sector university in Sindh, dedicated to providing high-quality technical education. It focuses on engineering, science, and technology programs, contributing significantly to regional development through research and skilled graduates.",
@@ -334,18 +325,15 @@ export const Detailed_Data: Detail[] = [
     desc3: "Merit and need-based aid.",
     box4: "Modern Labs",
     desc4: "Advanced engineering facilities.",
-
     employment: "88%",
     alumni: "25,000+",
     partners: "80+",
-
     duration: "120 min",
     Questions: 100,
     Negative: "None",
-    Calculator: "dont know",
+    Calculator: "don't know",
     Sections: "Mathematics, Physics, Chemistry, English",
     Note: "Duration 2 hours, ECAT-style test.",
-
     sub: ["Mathematics", "Chemistry", "Physics", "English"],
     time: [35, 25, 20, 10],
     Ques: [40, 30, 20, 10],
@@ -355,37 +343,35 @@ export const Detailed_Data: Detail[] = [
 
   {
     id: "UOK",
-    image:"/KU.jpg",
+    image: "/KU.jpg",
     title: "University of Karachi",
     description:
-      "University of Karachi (UOK) is one of Pakistan’s largest and most prestigious universities. Known for academic excellence, innovative research programs, and a vibrant student community, UOK offers cutting-edge laboratories, strong industry collaborations, and opportunities to excel in science, technology, and humanities. It nurtures leaders and innovators across diverse disciplines.",
+      "University of Karachi (UOK) is one of Pakistan's largest and most prestigious universities. Known for academic excellence, innovative research programs, and a vibrant student community, UOK offers cutting-edge laboratories, strong industry collaborations, and opportunities to excel in science, technology, and humanities. It nurtures leaders and innovators across diverse disciplines.",
     specialized: "Science, Humanities, & Diverse Fields",
     founded: 1951,
     location: "Karachi, Sindh",
     box1: "Top Ranked",
-    desc1: "One of Pakistan’s leading public universities.",
+    desc1: "One of Pakistan's leading public universities.",
     box2: "Diverse Programs",
     desc2: "Wide range of academic fields.",
     box3: "Scholarships",
     desc3: "Merit and need-based aid.",
     box4: "Research Focus",
     desc4: "Strong academic and research culture.",
-
     employment: "85%",
     alumni: "100,000+",
     partners: "120+",
-
     duration: "Varied",
     Questions: 100,
     Negative: "No",
-    Calculator: "dont know",
+    Calculator: "don't know",
     Sections: "English, General Knowledge, Subject Area, Analytical Reasoning",
     Note: "Pattern depends on department; duration ~1.5 hours.",
-
     sub: [
       "English Comprehension",
       "Analytical Reasoning",
       "General Knowledge",
+      "Subject Area",
     ],
     time: [20, 20, 40, 10],
     Ques: [25, 25, 40, 10],
@@ -395,33 +381,30 @@ export const Detailed_Data: Detail[] = [
 
   {
     id: "IBA",
-    image:"/IBA.jpeg",
+    image: "/IBA.jpeg",
     title: "Institute of Business Administration",
     description:
-      "Institute of Business Administration (IBA Karachi) is one of Pakistan’s top business schools, recognized for its strong academic programs, research excellence, and industry-oriented curriculum. With a focus on entrepreneurship, management, finance, and data analytics, IBA prepares future leaders through a mix of rigorous academics, experiential learning, and global collaborations.",
+      "Institute of Business Administration (IBA Karachi) is one of Pakistan's top business schools, recognized for its strong academic programs, research excellence, and industry-oriented curriculum. With a focus on entrepreneurship, management, finance, and data analytics, IBA prepares future leaders through a mix of rigorous academics, experiential learning, and global collaborations.",
     specialized: "Business Administration & Management Sciences",
     founded: 1955,
     location: "Karachi, Sindh",
     box1: "Top Ranked",
-    desc1: "Pakistan’s leading business institute.",
+    desc1: "Pakistan's leading business institute.",
     box2: "Global Links",
     desc2: "Partners with top universities.",
     box3: "Scholarships",
     desc3: "Merit and need-based aid.",
     box4: "Modern Campus",
     desc4: "Smart, research-focused learning.",
-
     employment: "97%",
     alumni: "15,000+",
     partners: "120+",
-
     duration: "120 min",
     Questions: 110,
     Negative: "No",
     Calculator: "Not allowed",
     Sections: "English, Quantitative, Analytical Reasoning",
     Note: "Highly competitive 2-hour test.",
-
     sub: [
       "English Grammar & Vocabulary",
       "Analytical Reasoning",
@@ -435,35 +418,32 @@ export const Detailed_Data: Detail[] = [
 
   {
     id: "GIKI",
-    image:"/GIKI.jpg",
+    image: "/GIKI.jpg",
     title:
       "Ghulam Ishaq Khan Institute of Engineering Sciences and Technology",
     description:
-      "Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI) is one of Pakistan’s top engineering institutions. Known for innovation, advanced research labs, and international collaborations, GIKI develops leaders in engineering, technology, and applied sciences. The campus combines academic rigor with practical problem-solving, producing highly skilled graduates.",
+      "Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI) is one of Pakistan's top engineering institutions. Known for innovation, advanced research labs, and international collaborations, GIKI develops leaders in engineering, technology, and applied sciences. The campus combines academic rigor with practical problem-solving, producing highly skilled graduates.",
     specialized: "Engineering & Applied Sciences",
     founded: 1993,
     location: "Swabi, Khyber Pakhtunkhwa",
     box1: "Top Ranked",
-    desc1: "Pakistan’s leading engineering and tech institute.",
+    desc1: "Pakistan's leading engineering and tech institute.",
     box2: "Research Focused",
     desc2: "Strong emphasis on innovation and R&D.",
     box3: "Scholarships",
     desc3: "Merit and need-based financial aid.",
     box4: "Modern Campus",
     desc4: "Advanced labs and residential facilities.",
-
     employment: "95%",
     alumni: "10,000+",
     partners: "100+",
-
     duration: "120 min",
     Questions: 100,
     Negative: "None",
     Calculator: "Allowed",
     Sections: "Mathematics, Physics, English, Chemistry/Computer Science",
     Note: "Two-hour test, based on conceptual problem-solving.",
-
-    sub: ["Chemistry ,Computer Science", "Mathematics", "Physics", "English"],
+    sub: ["Chemistry / Computer Science", "Mathematics", "Physics", "English"],
     time: [45, 35, 20, 20],
     Ques: [40, 30, 15, 15],
     weightage: ["40%", "30%", "15%", "15%"],
@@ -472,10 +452,10 @@ export const Detailed_Data: Detail[] = [
 
   {
     id: "CUI",
-    image:"/CUI.jpg",
+    image: "/CUI.jpg",
     title: "COMSATS University Islamabad",
     description:
-      "COMSATS University Islamabad (CUI) is one of Pakistan’s most prestigious higher education institutions, known for its excellence in technology, computing, and management sciences. CUI combines strong academic foundations with a focus on innovation and research, producing graduates ready for the global market.",
+      "COMSATS University Islamabad (CUI) is one of Pakistan's most prestigious higher education institutions, known for its excellence in technology, computing, and management sciences. CUI combines strong academic foundations with a focus on innovation and research, producing graduates ready for the global market.",
     specialized: "IT, Computing, & Engineering",
     founded: 1998,
     location: "Islamabad (Main), Lahore, Wah, Abbottabad, etc.",
@@ -493,8 +473,8 @@ export const Detailed_Data: Detail[] = [
     duration: "120 min",
     Questions: 90,
     Negative: "No",
-    Calculator: "dont know",
-    Sections: "English, , Analytical, , Quantitative, , Subject Area",
+    Calculator: "don't know",
+    Sections: "English, Analytical, Quantitative, Subject Area",
     Note: "NAT or own test format; 2-hour duration.",
     sub: ["Quantitative", "Subject Area", "Analytical", "English"],
     Ques: [20, 20, 20, 30],
@@ -505,10 +485,10 @@ export const Detailed_Data: Detail[] = [
 
   {
     id: "PU",
-    image:"/PU.jpeg",
+    image: "/PU.jpeg",
     title: "University of the Punjab",
     description:
-      "The University of the Punjab (PU), established in 1882, is one of Pakistan’s oldest and most prestigious institutions of higher learning. Known for its academic excellence, diverse programs, and strong research output, PU provides an ideal environment for intellectual and personal growth. Its legacy, commitment to innovation, and vibrant student culture make it a top choice for scholars nationwide.",
+      "The University of the Punjab (PU), established in 1882, is one of Pakistan's oldest and most prestigious institutions of higher learning. Known for its academic excellence, diverse programs, and strong research output, PU provides an ideal environment for intellectual and personal growth. Its legacy, commitment to innovation, and vibrant student culture make it a top choice for scholars nationwide.",
     specialized: "Diverse Academics (Arts, Science, Commerce)",
     founded: 1882,
     location: "Lahore, Punjab",
@@ -526,11 +506,11 @@ export const Detailed_Data: Detail[] = [
     duration: "Varied",
     Questions: 100,
     Negative: "No",
-    Calculator: "dont know",
-    Sections: "English, , Subject Knowledge, , Analytical Skills",
+    Calculator: "don't know",
+    Sections: "English, Subject Knowledge, Analytical Skills",
     Note: "Pattern varies by department or faculty.",
     sub: [
-      "Quantitative" , "Mathematics",
+      "Quantitative / Mathematics",
       "Analytical Reasoning",
       "Subject Knowledge",
       "English",
@@ -543,18 +523,18 @@ export const Detailed_Data: Detail[] = [
 
   {
     id: "SSUET",
-    image:"/SSUET.jpg",
+    image: "/SSUET.jpg",
     title: "Sir Syed University of Engineering & Technology",
     description:
-      "Sir Syed University of Engineering & Technology (SSUET) is one of Pakistan’s leading private engineering institutions, emphasizing innovation, applied learning, and modern technological advancement. With strong faculty, advanced labs, and a vision rooted in progress and practicality, SSUET continues to shape competent engineers ready for the future.",
+      "Sir Syed University of Engineering & Technology (SSUET) is one of Pakistan's leading private engineering institutions, emphasizing innovation, applied learning, and modern technological advancement. With strong faculty, advanced labs, and a vision rooted in progress and practicality, SSUET continues to shape competent engineers ready for the future.",
     specialized: "Engineering & Technology",
     founded: 1993,
     location: "Karachi, Sindh",
     duration: "120 min",
     Questions: 100,
     Negative: "None",
-    Calculator: "dont know",
-    Sections: "Mathematics, , Physics, , Chemistry, , English",
+    Calculator: "don't know",
+    Sections: "Mathematics, Physics, Chemistry, English",
     Note: "2-hour ECAT-based test; no negative marking.",
     sub: ["Mathematics", "Chemistry", "Physics", "English"],
     Ques: [40, 30, 20, 10],
@@ -573,26 +553,26 @@ export const Detailed_Data: Detail[] = [
     alumni: "15,000+",
     partners: "60+",
   },
+
   {
     id: "MAJU",
-    image:"/MAJU.png",
+    image: "/MAJU.png",
     title: "Muhammad Ali Jinnah University",
     description:
-      "Muhammad Ali Jinnah University (MAJU) stands as one of Pakistan’s top-tier private universities, fostering excellence in engineering, computing, and business education. With its blend of modern technology, research innovation, and real-world exposure, MAJU cultivates future-ready professionals who contribute globally in science, innovation, and leadership.",
+      "Muhammad Ali Jinnah University (MAJU) stands as one of Pakistan's top-tier private universities, fostering excellence in engineering, computing, and business education. With its blend of modern technology, research innovation, and real-world exposure, MAJU cultivates future-ready professionals who contribute globally in science, innovation, and leadership.",
     specialized: "IT, Computer Science, & Business",
     founded: 1998,
     location: "Karachi (Main), Islamabad",
     duration: "90 min",
     Questions: 100,
     Negative: "None",
-    Calculator: "dont know",
-    Sections:
-      "English, , Mathematics, , Analytical Reasoning, , General Knowledge",
+    Calculator: "don't know",
+    Sections: "English, Mathematics, Analytical Reasoning, General Knowledge",
     Note: "Objective-based test, 1.5 hours long.",
     sub: [
       "Analytical Reasoning",
       "General Knowledge",
-       "Mathematics",
+      "Mathematics",
       "English",
     ],
     Ques: [25, 35, 25, 15],
@@ -611,4 +591,5 @@ export const Detailed_Data: Detail[] = [
     alumni: "12,000+",
     partners: "70+",
   },
+
 ];

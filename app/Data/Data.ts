@@ -93,7 +93,7 @@ const Data: University[] = [
     sub: "Build your engineering future — your QUEST starts here.",
     description:
       "The QUEST Admission Test sharpens your skills in Mathematics, Physics, Chemistry, and English, testing your problem-solving ability and conceptual understanding for academic excellence.",
-    image: "/QUEST.jpeg",
+    image: "/QUEST.webp",
   },
 
   {

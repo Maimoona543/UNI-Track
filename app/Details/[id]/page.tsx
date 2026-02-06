@@ -42,7 +42,7 @@ useEffect(() => {
   
 
 return (
-  <div className="bg-linear-to-t from-[#0b0b24] to-[rgba(10,19,51,1)] w-full">
+  <div className="bg-linear-to-t from-[#0b0b24] to-[rgba(10,19,51,1)] w-min-screen">
     <div className="relative pt-10 gap-8 w-full min-h-screen flex justify-center items-center flex-col">
 
       {/* ── HERO — shrink on load, no observer needed ── */}

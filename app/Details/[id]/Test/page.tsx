@@ -117,7 +117,7 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
   }, [filled, isFilling, loading]);
 
   return (
-    <div className="w-full min-h-screen bg-[#151a31] flex flex-col justify-center items-center">
+    <div className="relative w-full min-h-screen bg-[#151a31] flex flex-col justify-center items-center">
       <div
         className="absolute inset-0 opacity-[0.01] pointer-events-none"
         style={{
@@ -179,32 +179,37 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
 {/* ── Loading ── */}
 {isFilling && (
 <div className="screen-enter h-full flex flex-col justify-center items-center w-full">
-  {/* Spinner */}
-  <div className="flex justify-center items-center mb-8">
-    <div className="relative flex justify-center items-center">
-      <div className="rounded-full border-4 border-gray-200 border-t-blue-500 animate-spin h-20 w-20 sm:w-30 sm:h-30"></div>
+  {/* Spinner with centered logo using grid */}
+  <div className="mb-8">
+    <div className="grid place-items-center">
+      <div className="col-start-1 row-start-1 rounded-full border-4 border-gray-200 border-t-blue-500 animate-spin h-20 w-20 sm:w-30 sm:h-30"></div>
       <img
-        className="absolute sm:w-12 sm:h-12 w-10 h-10"
+        className="col-start-1 row-start-1 sm:w-12 sm:h-12 w-10 h-10"
         src="/logo.png"
         alt="Loading"
       />
     </div>
   </div>
-
-  {/* Progress bar  */}
-  <div className="fixed  top-115 w-full bg-slate-700 rounded-full h-1 overflow-hidden">
-    <div
-      className="h-full bg-linear-to-r from-cyan-400 via-blue-500 to-cyan-400 transition-all duration-300 ease-out"
-      style={{ width: `${filled}%` }}
-    />
-  </div>
-  <p className="fixed top-105 left-0 w-full text-center text-slate-400 text-sm">Loading your test... {filled}%</p>
 </div>
 )}
 
+{/* Progress bar - outside loading div, absolute to main container */}
+{isFilling && (
+  <>
+    <div className="absolute bottom-0 left-0 w-full bg-slate-700 rounded-full h-1 overflow-hidden">
+      <div
+        className="h-full bg-linear-to-r from-cyan-400 via-blue-500 to-cyan-400 transition-all duration-300 ease-out"
+        style={{ width: `${filled}%` }}
+      />
+    </div>
+    <p className="absolute bottom-2 left-0 w-full text-center text-slate-400 text-sm">
+      Loading your test... {filled}%
+    </p>
+  </>
+)}
 {/* ── Questions ── */}
 {questions.length > 0 && !finished && !isFilling && (
-  <div className="screen-enter md:w-[45%] w-[90%] sm:w-[58%] relative text-center">
+  <div className="screen-enter w-[90%] sm:w-[85%] md:w-[70%] lg:w-[60%] xl:w-[50%] 2xl:w-[45%] mx-auto relative text-center">
     <div className="flex flex-col justify-center items-center mb-7">
       <h2 className="mb-3 md:text-5xl text-3xl font-bold text-slate-300">
         {sub.length > 1 ? "You chose to start with all subjects" : sub}
@@ -288,7 +293,6 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
     </div>
   </div>
 )}
-
 {/* ── Results ── */}
 {finished && questions.length > 0 && (
   <div className="screen-enter bg-black/40 shadow-xl shadow-cyan-800 w-[75%] h-full sm:w-[50%] xl:max-w-[40%] rounded-3xl p-10 text-center">
