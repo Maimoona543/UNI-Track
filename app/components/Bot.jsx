@@ -70,7 +70,7 @@ return (
             {messages.map((msg, index) => (
               <div
                 key={index}
-                className={`${msg.role === "user" ? "self-end bg-blue-500 rounded-bl-xl" : "self-start bg-blue-500 text-gray-800 rounded-br-xl"} sm:max-w-[85%] max-sm:[80%] p-3 rounded-t-xl shadow-sm`}
+                className={`${msg.role === "user" ? "self-end bg-cyan-300/40  rounded-bl-xl text-slate-100" : "self-start bg-slate-300 text-slate-600 rounded-br-xl"} sm:max-w-[85%] max-sm:[80%] p-3 rounded-t-xl shadow-sm`}
               >
                 <p className="whitespace-pre-wrap leading-relaxed">{msg.text}</p>
               </div>

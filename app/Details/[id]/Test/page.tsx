@@ -196,7 +196,7 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
 {/* Progress bar - outside loading div, absolute to main container */}
 {isFilling && (
   <>
-    <div className="absolute bottom-0 left-0 w-full bg-slate-700 rounded-full h-1 overflow-hidden">
+    <div className="absolute bottom-1 left-0 w-full bg-slate-700 rounded-full h-1 overflow-hidden">
       <div
         className="h-full bg-linear-to-r from-cyan-400 via-blue-500 to-cyan-400 transition-all duration-300 ease-out"
         style={{ width: `${filled}%` }}

@@ -132,7 +132,7 @@ return (
         </section>
 
         {/* ── Test Info — fade up ── */}
-        <section data-anim="animate-fade-up" className="scroll-hidden bg-[#151531] hover:shadow-mxl shadow-blue-500 border-2 py-3 rounded-2xl border-[#080840] w-[94%] my-15">
+        <section data-anim="animate-fade-up" className="scroll-hidden bg-[#151531] hover:shadow-mxl shadow-blue-500 border-2 py-3 rounded-2xl border-[#080840] w-[94%] mt-15 mb-3">
           <div className="text-center">
             <h2 className="text-4xl font-bold tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)] text-center py-8">Test Information</h2>
           </div>
@@ -149,7 +149,7 @@ return (
         </section>
 
         {/* ── Table — fade up ── */}
-        <section data-anim="animate-fade-up" className="scroll-hidden bg-[#151531] border-2 pt-3 max-sm:section-scroll max-sm:overflow-x-auto rounded-2xl border-[#080840] w-[94%] my-15 text-center">
+        <section data-anim="animate-fade-up" className="scroll-hidden bg-[#151531] border-2 pt-1 max-sm:section-scroll max-sm:overflow-x-auto rounded-2xl border-[#080840] w-[94%] my-15 text-center">
           <h2 className="py-6 text-3xl font-extrabold tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)] text-center">Section-Wise Breakdown</h2>
           <table className="text-center w-full gap-x-2">
             <thead>
