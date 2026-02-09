@@ -46,9 +46,9 @@ return (
     <div className="relative pt-10 gap-8 w-full min-h-screen flex justify-center items-center flex-col">
 
       {/* ── HERO — shrink on load, no observer needed ── */}
-      <section className="sm:rounded-3xl sm:w-[84%] max-sm:full sm:h-[550px] max-sm:h-[350px] max-sm:rounded-xl relative animate-shrink">
+      <section className="sm:rounded-3xl sm:w-[88%] md:w-[98%] lg:w-[90%]  sm:h-[550px] max-sm:h-[350px] max-sm:rounded-xl relative animate-shrink">
         <img
-          className="w-full h-full sm:rounded-3xl max-sm:rounded-xl object-cover shadow-2xl border-6 bg-linear-to-t from-[#060646] to-[rgba(0,54,201,1)]"
+          className="w-full h-full sm:rounded-3xl max-sm:rounded-xl object-cover shadow-2xl sm:border-6  border-3 bg-linear-to-t from-[#060646] to-[rgba(0,54,201,1)]"
           src={uni.image}
           alt={uni.id}
         />
@@ -64,7 +64,7 @@ return (
         </div>
       </section>
 
-      <div className="flex justify-center flex-col items-center lg:rounded-3xl lg:border-4 lg:w-[81%] w-[99%] h-full lg:border-[#080840] pt-6">
+      <div className="flex justify-center flex-col items-center lg:rounded-3xl lg:border-4 lg:w-[81%] md:w-90% w-full h-full lg:border-[#080840] max-sm:pt-3 pt-6">
 
         {/* ── 3 offset boxes: Founded / Location / Specialization ── */}
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch text-center w-full px-10 pt-6 pb-10">
@@ -90,7 +90,7 @@ return (
           <h2 className="text-4xl lg:text-6xl mb-1 font-bold w-[90%] tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-cyan-500 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)] pt-5 pb-7 text-center">
             Why Choose {uni.id}?
           </h2>
-          <p className="w-[89%] text-[#b1afaf] text-start text-xl">{uni.description}</p>
+          <p className="w-[89%] text-[#b1afaf] text-start text-sm sm:text-xl">{uni.description}</p>
 
           {/* ── 4 offset boxes ── */}
           <div className="grid lg:grid-cols-4 sm:grid-cols-2 max-sm:grid-cols-1 justify-between gap-5 px-4 py-10 w-full items-stretch">
@@ -136,21 +136,21 @@ return (
           <div className="text-center">
             <h2 className="text-4xl font-bold tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)] text-center py-8">Test Information</h2>
           </div>
-          <div className="grid grid-cols-2 grid-rows-2 gap-6 ml-9 text-blue-400 font-bold text-xl max-sm:text-lg">
-            <p>Total Duration: <span className="text-slate-300 max-sm:text-md">{uni.duration}</span></p>
-            <p>Questions: <span className="text-slate-300 max-sm:text-md max-sm:font-light">{uni.Questions}</span></p>
-            <p>Calculator: <span className="text-slate-300 max-sm:text-md max-sm:font-light">{uni.Calculator}</span></p>
-            <p>Negative: <span className="text-slate-300 max-sm:text-md max-sm:font-light">{uni.Negative}</span></p>
+          <div className="grid grid-cols-2 grid-rows-2 gap-6 ml-9 text-blue-400 font-bold max-sm:text-md text-xl max-sm:text-lg">
+            <p>Total Duration: <span className="text-slate-300 max-sm:text-sm  max-sm:font-light">{uni.duration}</span></p>
+            <p>Questions: <span className="text-slate-300 max-sm:text-sm max-sm:font-light">{uni.Questions}</span></p>
+            <p>Calculator: <span className="text-slate-300 max-sm:text-sm max-sm:font-light">{uni.Calculator}</span></p>
+            <p>Negative: <span className="text-slate-300 max-sm:text-sm max-sm:font-light">{uni.Negative}</span></p>
           </div>
-          <div className="ml-9 mt-6 text-blue-400 font-bold text-xl">
-            <p>Sections: <span className="text-slate-300 max-sm:text-md max-sm:font-light">{uni.Sections}</span></p>
-            <p className="my-6">Note: <span className="text-slate-300 underline max-sm:text-md max-sm:font-light">{uni.Note}</span></p>
+          <div className="ml-9 mt-6 text-blue-400 font-bold max-sm:text-md text-xl">
+            <p>Sections: <span className="text-slate-300 max-sm:text-sm max-sm:font-light">{uni.Sections}</span></p>
+            <p className="my-6">Note: <span className="text-slate-300 underline max-sm:text-sm max-sm:font-light">{uni.Note}</span></p>
           </div>
         </section>
 
         {/* ── Table — fade up ── */}
         <section data-anim="animate-fade-up" className="scroll-hidden bg-[#151531] border-2 pt-1 max-sm:section-scroll max-sm:overflow-x-auto rounded-2xl border-[#080840] w-[94%] my-15 text-center">
-          <h2 className="py-6 text-3xl font-extrabold tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)] text-center">Section-Wise Breakdown</h2>
+          <h2 className="py-6 text-3xl max-sm:text-xl font-extrabold tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)] text-center">Section-Wise Breakdown</h2>
           <table className="text-center w-full gap-x-2">
             <thead>
               <tr className="text-blue-300 font-extrabold bg-blue-800/40 text-md">
@@ -165,7 +165,7 @@ return (
               {uni.sub.map((subject, index) => {
                 const isLast = index === uni.sub.length - 1;
                 return (
-                  <tr key={index} className="text-slate-300 text-md hover:bg-blue-800/10">
+                  <tr key={index} className="text-slate-300 sm:text-md text-[11px] hover:bg-blue-800/10">
                     <td className={`py-4 px-4 ${isLast ? "border-b-0" : "border-b border-blue-700/50"}`}>{subject}</td>
                     <td className={`py-4 px-4 text-center ${isLast ? "border-b-0" : "border-b border-[#0f1fab]"}`}>{uni.Ques[index]}</td>
                     <td className={`py-4 px-4 text-center ${isLast ? "border-b-0" : "border-b border-[#0f1fab]"}`}>{uni.time[index]} mins</td>
