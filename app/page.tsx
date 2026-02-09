@@ -107,7 +107,7 @@ const page = () => {
                <div className="h-0.5 sm:w-30 max-sm:w-10 mt-2 z-10 bg-linear-to-r from-cyan-300 via-blue-600 to-cyan-200"></div>
 
         {/* Grid Layout */}
-        <div className="grid lg:grid-cols-3 lg:gap-4  gap-4 md:gap-3 md:grid-cols-2 max-sm:mx-2  my-10">
+        <div className="grid lg:grid-cols-3 lg:gap-4   gap-4 md:gap-3 md:grid-cols-2 max-sm:mx-2  my-10">
           {filtered.length > 0 ? (
             filtered.map((university, index) => (
               <Card key={university.id || index} uni={university} index={index} />

@@ -20,7 +20,7 @@ return (
     className={`animate-fade-up ${delays[index % 3]}`}
     style={{ animationDelay: `${Math.floor(index / 3) * 200}ms` }}
   >
-    <div className="group relative h-full rounded-2xl flex flex-col w-full sm:w-96 md:w-80 lg:w-96 xl:w-[400px] border-4 border-b-cyan-700 border-slate-300 hover:bg-linear-to-r hover:from-[#5558FF]/60 hover:to-[#00C0FF]/60 transition-colors">
+    <div className="group relative h-full rounded-2xl flex flex-col w-full sm:w-96 md:w-90 lg:w-80 xl:w-[400px] border-4 border-b-cyan-700 border-slate-300 hover:bg-linear-to-r hover:from-[#5558FF]/60 hover:to-[#00C0FF]/60 transition-colors">
       <div className="overflow-hidden rounded-t-xl">
         <img
           className="h-48 sm:h-52 w-full object-cover transition-transform duration-500 rounded-t-xl ease-out group-hover:scale-110"
