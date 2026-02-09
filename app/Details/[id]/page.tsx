@@ -46,12 +46,12 @@ return (
     <div className="relative pt-10 gap-8 w-full min-h-screen flex justify-center items-center flex-col">
 
       {/* ── HERO — shrink on load, no observer needed ── */}
-      <section className="sm:rounded-3xl sm:w-[88%] md:w-[98%] lg:w-[90%]  sm:h-[550px] max-sm:h-[350px] max-sm:rounded-xl relative animate-shrink">
-        <img
-          className="w-full h-full sm:rounded-3xl max-sm:rounded-xl object-cover shadow-2xl sm:border-6  border-3 bg-linear-to-t from-[#060646] to-[rgba(0,54,201,1)]"
-          src={uni.image}
-          alt={uni.id}
-        />
+     <section className="sm:rounded-3xl w-full max-w-7xl mx-auto sm:h-[600px]  md:h-[550px] max-sm:h-[400px] max-sm:rounded-xl relative animate-shrink">
+  <img
+    className="w-full h-full sm:rounded-3xl max-sm:rounded-xl object-cover shadow-2xl sm:border-6 border-3 bg-linear-to-t from-[#060646] to-[rgba(0,54,201,1)]"
+    src={uni.image}
+    alt={uni.id}
+  />
         <div className="absolute inset-0 max-sm:rounded-xl bg-linear-to-t from-[rgba(6,6,71,1)] to-[rgba(0,54,201,1)] sm:rounded-3xl opacity-50"></div>
         <div className="absolute inset-0 flex items-center justify-center flex-col text-white">
           <p className="text-4xl sm:text-6xl mb-1 font-bold w-[90%] tracking-tight bg-linear-to-r from-cyan-300 via-blue-400 to-cyan-200 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)] pb-2 text-center">{uni.title}</p>
@@ -116,17 +116,17 @@ return (
         <div className="h-0.5 w-[98%] mt-12 bg-linear-to-r from-cyan-300 via-blue-600 to-cyan-200"></div>
 
         {/* ── Employment / Alumni / Partners — 3 offset ── */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 w-[90%] mx-auto">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 max-md:w-[70%] w-[90%] mx-auto">
           <div data-anim="animate-from-left" className="scroll-hidden-left delay-0 flex flex-col text-center justify-center items-center rounded-xl border py-7 px-10 border-[#0f1fab] bg-linear-to-bl from-[rgba(41,41,71,1)] to-[rgba(19,19,72,1)]">
-            <p className="text-5xl font-extrabold pb-2 tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)]">{uni.employment}</p>
+            <p className="text-5xl lg:text-5xl md:text-4xl font-extrabold pb-2 tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)]">{uni.employment}</p>
             <p className="text-slate-300">Employment rate</p>
           </div>
           <div data-anim="animate-from-right" className="scroll-hidden-right delay-150 flex flex-col text-center justify-center items-center rounded-xl border py-7 px-10 border-[#0f1fab] bg-linear-to-bl from-[rgba(41,41,71,1)] to-[rgba(19,19,72,1)]">
-            <p className="text-5xl font-extrabold pb-2 tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)]">{uni.alumni}</p>
+            <p className="text-5xl lg:text-5xl md:text-4xl font-extrabold pb-2 tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)]">{uni.alumni}</p>
             <p className="text-slate-300">Alumni worldwide</p>
           </div>
           <div data-anim="animate-from-left" className="scroll-hidden-left delay-300 flex flex-col text-center justify-center items-center rounded-xl border py-7 px-10 border-[#0f1fab] bg-linear-to-bl from-[rgba(41,41,71,1)] to-[rgba(19,19,72,1)]">
-            <p className="text-5xl font-extrabold pb-2 tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)]">{uni.partners}</p>
+            <p className="text-5xl lg:text-5xl md:text-4xl font-extrabold pb-2 tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)]">{uni.partners}</p>
             <p className="text-slate-300">Corporate Partners</p>
           </div>
         </section>
@@ -165,7 +165,7 @@ return (
               {uni.sub.map((subject, index) => {
                 const isLast = index === uni.sub.length - 1;
                 return (
-                  <tr key={index} className="text-slate-300 sm:text-md text-[11px] hover:bg-blue-800/10">
+                  <tr key={index} className="text-slate-300 text-md max-sm:text-[11px] hover:bg-blue-800/10">
                     <td className={`py-4 px-4 ${isLast ? "border-b-0" : "border-b border-blue-700/50"}`}>{subject}</td>
                     <td className={`py-4 px-4 text-center ${isLast ? "border-b-0" : "border-b border-[#0f1fab]"}`}>{uni.Ques[index]}</td>
                     <td className={`py-4 px-4 text-center ${isLast ? "border-b-0" : "border-b border-[#0f1fab]"}`}>{uni.time[index]} mins</td>
