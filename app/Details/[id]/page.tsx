@@ -42,32 +42,31 @@ useEffect(() => {
   
 
 return (
-  <div className="bg-linear-to-t from-[#0b0b24] to-[rgba(10,19,51,1)] w-min-screen">
-    <div className="relative pt-10 gap-8 w-full min-h-screen flex justify-center items-center flex-col">
+<div className="bg-linear-to-t from-[#0b0b24] to-[rgba(10,19,51,1)] w-full ">
+  <div className="relative pt-10 gap-8 w-full min-h-screen flex justify-center items-center flex-col">
 
-      {/* ── HERO — shrink on load, no observer needed ── */}
-     <section className="sm:rounded-3xl w-full max-w-7xl mx-auto sm:h-[600px]  md:h-[550px] max-sm:h-[400px] max-sm:rounded-xl relative animate-shrink">
+    {/* ── HERO — shrink on load, no observer needed ── */}
+   <section className="sm:rounded-3xl w-full sm:max-w-7xl sm:mx-auto sm:h-[600px] md:h-[550px] max-sm:h-[400px] max-sm:rounded-xl relative animate-fade-in overflow-hidden">
   <img
-    className="w-full h-full sm:rounded-3xl max-sm:rounded-xl object-cover shadow-2xl sm:border-6 border-3 bg-linear-to-t from-[#060646] to-[rgba(0,54,201,1)]"
+    className="w-full h-full sm:rounded-3xl max-sm:rounded-xl object-cover shadow-2xl sm:border-6 border-3 bg-linear-to-t from-[#060646] to-[rgba(0,54,201,1)] animate-shrink"
     src={uni.image}
     alt={uni.id}
   />
-        <div className="absolute inset-0 max-sm:rounded-xl bg-linear-to-t from-[rgba(6,6,71,1)] to-[rgba(0,54,201,1)] sm:rounded-3xl opacity-50"></div>
-        <div className="absolute inset-0 flex items-center justify-center flex-col text-white">
-          <p className="text-4xl sm:text-6xl mb-1 font-bold w-[90%] tracking-tight bg-linear-to-r from-cyan-300 via-blue-400 to-cyan-200 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)] pb-2 text-center">{uni.title}</p>
-          <p className="opacity-80 text-cyan-300 text-md">({uni.id})</p>
-          <Link href={`/Details/${uni.id.toLowerCase()}/Test`}>
-            <button className="mt-3 font-bold px-15 py-3 rounded-4xl tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-blue-500 drop-shadow-[0_0_25px_rgba(6,182,212,0.5)] hover:from-cyan-300 hover:via-blue-400 hover:to-blue-400 hover:cursor-pointer">
-              Take the {uni.id} Test 🚀
-            </button>
-          </Link>
-        </div>
-      </section>
-
+      <div className="absolute inset-0 max-sm:rounded-xl bg-linear-to-t from-[rgba(6,6,71,1)] to-[rgba(0,54,201,1)] sm:rounded-3xl opacity-50"></div>
+      <div className="absolute inset-0 flex items-center justify-center flex-col text-white">
+        <p className="text-4xl sm:text-6xl mb-1 font-bold w-[90%] tracking-tight bg-linear-to-r from-cyan-300 via-blue-400 to-cyan-200 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)] pb-2 text-center">{uni.title}</p>
+        <p className="opacity-80 text-cyan-300 text-md">({uni.id})</p>
+        <Link href={`/Details/${uni.id.toLowerCase()}/Test`}>
+          <button className="mt-3 font-bold px-15 py-3 rounded-4xl tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-blue-500 drop-shadow-[0_0_25px_rgba(6,182,212,0.5)] hover:from-cyan-300 hover:via-blue-400 hover:to-blue-400 hover:cursor-pointer">
+            Take the {uni.id} Test 🚀
+          </button>
+        </Link>
+      </div>
+    </section>
       <div className="flex justify-center flex-col items-center lg:rounded-3xl lg:border-4 lg:w-[81%] md:w-90% w-full h-full lg:border-[#080840] max-sm:pt-3 pt-6">
 
         {/* ── 3 offset boxes: Founded / Location / Specialization ── */}
-        <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch text-center w-full px-10 pt-6 pb-10">
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch text-center w-full px-3 sm:px-10 pt-6 pb-10">
           {/* left */}
           <div data-anim="animate-from-left" className="scroll-hidden-left delay-0 flex-1 rounded-2xl py-4 px-7 bg-linear-to-bl from-[rgba(41,41,71,1)] to-[rgba(19,19,72,1)] border border-[#0f1fab]">
             <p className="text-xl font-extrabold tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-cyan-500 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)]">Founded</p>
@@ -86,7 +85,8 @@ return (
         </section>
 
         {/* ── Why Choose — fade up ── */}
-        <section data-anim="animate-fade-up" className="scroll-hidden flex h-full border-3 rounded-3xl border-[#080840] bg-[#3636ab8b] lg:w-[94%] w-[90%] text-center items-center flex-col">
+        <section data-anim="animate-fade-up" className="scroll-hidden flex h-full border-3 rounded-3xl border-[#080840] bg-[#3636ab8b] lg:w-[94%] w-full max-sm:rounded-none sm:w-[90%] text-center items-center flex-col">
+
           <h2 className="text-4xl lg:text-6xl mb-1 font-bold w-[90%] tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-cyan-500 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(6,182,212,0.5)] pt-5 pb-7 text-center">
             Why Choose {uni.id}?
           </h2>
