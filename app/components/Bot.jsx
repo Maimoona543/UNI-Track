@@ -36,6 +36,7 @@ async function generateAnswer() {
 }
 
 
+
 return (
 
 <div className=''>
@@ -114,7 +115,9 @@ return (
           alt="Open Chat" 
         />
       </motion.div>
+      
     )}
+    
   </AnimatePresence>
 </div>
   )

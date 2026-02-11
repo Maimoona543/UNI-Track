@@ -1,8 +1,16 @@
 import { NextResponse } from "next/server";
+import crypto from "crypto";
+
+// In-memory store (use Redis/DB for production)
+const questionHistory = new Map<string, Set<string>>();
+
+function hashQuestion(q: string): string {
+  return crypto.createHash("md5").update(q.toLowerCase().trim()).digest("hex");
+}
 
 export async function POST(req: Request) {
   try {
-    const { subjects } = await req.json();
+    const { subjects, userId = "default" } = await req.json();
     const apiKey = process.env.GROQ_API_KEY;
 
     if (!apiKey) {
@@ -12,24 +20,41 @@ export async function POST(req: Request) {
       );
     }
 
-    // 🔁 Random seed to force different questions every time
-    const seed = Math.floor(Math.random() * 1000000);
+    // Get user's question history
+    if (!questionHistory.has(userId)) {
+      questionHistory.set(userId, new Set());
+    }
+    const userHistory = questionHistory.get(userId)!;
 
-    const prompt = `
+    let attempts = 0;
+    const maxAttempts = 3;
+    let uniqueQuestions: any[] = [];
+
+    while (uniqueQuestions.length < 30 && attempts < maxAttempts) {
+      attempts++;
+
+      const seed = Math.floor(Math.random() * 1000000);
+      const variation = [
+        "Include case studies",
+        "Focus on advanced concepts",
+        "Mix beginner and expert level",
+        "Add scenario-based questions",
+        "Include analytical questions"
+      ][attempts % 5];
+
+      const prompt = `
+Generate EXACTLY ${30 - uniqueQuestions.length} UNIQUE multiple-choice questions.
 Seed: ${seed}
-
-Generate EXACTLY 30 UNIQUE multiple-choice questions.
-Not more. Not less. EXACTLY 30.
+Variation: ${variation}
+Attempt: ${attempts}
 
 Subjects: ${subjects.join(", ")}
 
-Rules:
-- Questions MUST be different on every request
-- Randomize difficulty (easy, medium, hard)
-- Do NOT repeat questions
-- Each question must have 4 options
-- Answer must match one option EXACTLY
-- Return ONLY valid JSON (no text, no explanation)
+CRITICAL: Make questions COMPLETELY DIFFERENT and CREATIVE.
+- Use diverse question formats
+- Avoid common/obvious questions
+- Include real-world applications
+- Mix difficulty levels randomly
 
 JSON format:
 {
@@ -43,38 +68,44 @@ JSON format:
 }
 `;
 
-    const response = await fetch(
-      "https://api.groq.com/openai/v1/chat/completions",
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          model: "llama-3.3-70b-versatile",
-          messages: [{ role: "user", content: prompt }],
-          temperature: 0.8, // 🔥 IMPORTANT
-          response_format: { type: "json_object" },
-        }),
-      }
-    );
-
-    const data = await response.json();
-
-    if (!data?.choices?.[0]?.message?.content) {
-      return NextResponse.json(
-        { error: "Groq response missing content" },
-        { status: 500 }
+      const response = await fetch(
+        "https://api.groq.com/openai/v1/chat/completions",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            model: "llama-3.3-70b-versatile",
+            messages: [{ role: "user", content: prompt }],
+            temperature: 1.0,
+            top_p: 0.95,
+            response_format: { type: "json_object" },
+          }),
+        }
       );
+
+      const data = await response.json();
+      const parsed = JSON.parse(data.choices[0].message.content);
+
+      // Filter out duplicates
+      for (const q of parsed.questions) {
+        const hash = hashQuestion(q.question);
+        if (!userHistory.has(hash) && uniqueQuestions.length < 30) {
+          uniqueQuestions.push(q);
+          userHistory.add(hash);
+        }
+      }
     }
 
-    const parsed = JSON.parse(data.choices[0].message.content);
+    // Clear history after 100 questions to allow eventual reuse
+    if (userHistory.size > 100) {
+      const oldest = Array.from(userHistory).slice(0, 50);
+      oldest.forEach(hash => userHistory.delete(hash));
+    }
 
-    // 🛡️ Safety: enforce exactly 30
-    const safeQuestions = parsed.questions.slice(0, 30);
-
-    return NextResponse.json(safeQuestions);
+    return NextResponse.json(uniqueQuestions.slice(0, 30));
 
   } catch (error) {
     console.error("API Error:", error);

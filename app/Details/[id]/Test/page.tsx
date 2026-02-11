@@ -29,6 +29,11 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
   const [time, setTime] = useState<number>(30 * 60);
   const [filled, setFilled] = useState<number>(0);
   const [isFilling, setIsFilling] = useState<boolean>(false);
+const [skippedQuestions, setSkippedQuestions] = useState<Array<{
+  index: number;
+  question: typeof questions[0];
+}>>([]); const [isReviewMode, setIsReviewMode] = useState(false);
+const [reviewIndex, setReviewIndex] = useState(0);
 
   const generateQuestion = async () => {
     if (sub.length === 0) return;
@@ -70,7 +75,7 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
     const timer = setTimeout(() => {
       setCurrent((prev) => prev + 1);
       setSelectedOption("");
-    }, 3000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, [selectedOption, current, questions.length]);
@@ -209,86 +214,204 @@ const Page = ({ params }: { params: Promise<{ id: string }> }) => {
 )}
 {/* ── Questions ── */}
 {questions.length > 0 && !finished && !isFilling && (
-  <div className="screen-enter w-[90%] sm:w-[85%] md:w-[70%] lg:w-[60%] xl:w-[50%] 2xl:w-[45%] mx-auto relative text-center">
+  <div className="max-sm:my-6 screen-enter w-[90%] sm:w-[85%] md:w-[70%] lg:w-[60%] xl:w-[50%] 2xl:w-[45%] mx-auto relative text-center">
     <div className="flex flex-col justify-center items-center mb-7">
-      <h2 className="mb-3 md:text-5xl text-3xl font-bold text-slate-300">
-        {sub.length > 1 ? "You chose to start with all subjects" : sub}
+      <h2 className="mb-3 text-2xl sm:text-3xl md:text-5xl font-bold text-slate-300 px-2">
+        {isReviewMode 
+          ? "Review Skipped Questions" 
+          : sub.length > 1 
+            ? "You chose to start with all subjects" 
+            : sub}
       </h2>
-      <div className="bg-black/40 rounded-xl flex flex-row justify-center items-center w-30">
-        <p className="text-cyan-400 py-2 px-4 font-bold">
+      <div className="bg-black/40 rounded-xl flex flex-row justify-center items-center">
+        <p className="text-cyan-400 py-2 px-4 font-bold text-sm sm:text-base">
           ⏳ {String(Math.floor(time / 60)).padStart(2, "0")}:
           {String(time % 60).padStart(2, "0")}
         </p>
       </div>
     </div>
     <div className="w-full h-full bg-black/40 shadow-xl rounded-2xl shadow-cyan-800">
-      <section className="relative w-full h-full px-8 py-6 text-slate-300">
+      <section className="relative w-full h-full px-4 sm:px-8 py-4 sm:py-6 text-slate-300">
         <button
-          onClick={() => setFinished(true)}
-          className="absolute top-2 right-4 text-2xl font-light text-gray-400 hover:text-red-500"
+          onClick={() => {
+            if (isReviewMode) {
+              setIsReviewMode(false);
+              setReviewIndex(0);
+            } else {
+              setFinished(true);
+            }
+          }}
+          className="absolute top-2 right-3 sm:right-4 text-xl sm:text-2xl font-light text-gray-400 hover:text-red-500"
         >
           &times;
         </button>
-        <section>
-          <p className="text-sm">
-            Question {current + 1} of {questions.length}
-          </p>
-          <p className="sm:text-xl text-lg font-semibold my-3 text-start">
-            Q{current + 1}) {questions[current].question}
-          </p>
+        
+        {/* Review Mode */}
+       {isReviewMode ? (
+  <section>
+    <p className="text-xs sm:text-sm">
+      Skipped Question {reviewIndex + 1} of {skippedQuestions.length}
+    </p>
+    <p className="text-base sm:text-lg md:text-xl font-semibold my-3 text-start leading-relaxed">
+      Q{skippedQuestions[reviewIndex].index + 1}) {skippedQuestions[reviewIndex].question.question}
+    </p>
 
-          <div>
-            {questions[current].options.map((opt, i) => (
+    <div className="space-y-2">
+      {skippedQuestions[reviewIndex].question.options.map((opt, i) => (
+        <button
+          key={i}
+          disabled={!!selectedOption}
+          onClick={() => {
+            setSelectedOption(opt);
+            const answeredIndex = skippedQuestions[reviewIndex].index;
+            const currentSkippedLength = skippedQuestions.length;
+            const isCorrect = opt === skippedQuestions[reviewIndex].question.answer;
+            
+            // Update count if correct
+            if (isCorrect) {
+              setCount((prev) => prev + 1);
+            }
+            
+            // Move to next skipped question or exit review mode after delay
+            setTimeout(() => {
+              // Remove from skipped questions
+              setSkippedQuestions((prev) => prev.filter((q) => q.index !== answeredIndex));
+              
+              setSelectedOption("");
+              
+              // Check if there are more skipped questions after removing current one
+              if (currentSkippedLength > 1) {
+                // If we're not at the last skipped question, stay at same index
+                // (because array shifted after removal)
+                if (reviewIndex >= currentSkippedLength - 1) {
+                  // We were at the last question, go to previous
+                  setReviewIndex(Math.max(0, reviewIndex - 1));
+                }
+                // else: stay at same reviewIndex (next question will now be at this index)
+              } else {
+                // No more skipped questions, exit review mode
+                setIsReviewMode(false);
+                setReviewIndex(0);
+                setCurrent(questions.length - 1);
+              }
+            }, 1500); // Changed to 1.5 seconds - adjust as needed
+          }}
+          className={`w-full text-left px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl border transition-colors text-sm sm:text-base leading-relaxed
+            ${
+              selectedOption === opt
+                ? opt === skippedQuestions[reviewIndex].question.answer
+                  ? "bg-green-500 border-green-600"
+                  : "bg-red-500 border-red-600"
+                : "bg-transparent hover:bg-slate-400/16 border-slate-600"
+            }
+          `}
+        >
+          {opt}
+        </button>
+      ))}
+    </div>
+          </section>
+        ) : (
+          /* Normal Mode */
+          <section>
+            <p className="text-xs sm:text-sm">
+              Question {current + 1} of {questions.length}
+            </p>
+            <p className="text-base sm:text-lg md:text-xl font-semibold my-3 text-start leading-relaxed">
+              Q{current + 1}) {questions[current].question}
+            </p>
+
+            <div className="space-y-2">
+              {questions[current].options.map((opt, i) => (
+                <button
+                  key={i}
+                  disabled={!!selectedOption}
+                  onClick={() => {
+                    setSelectedOption(opt);
+                    setSkippedQuestions((prev) => prev.filter((q) => q.index !== current));
+                    if (opt === questions[current].answer) {
+                      setCount((prev) => prev + 1);
+                    }
+                    setTimeout(() => {
+
+                      if (current === questions.length - 1 && skippedQuestions.length === 0) {
+                        setFinished(true);
+                      }
+                    },2500)
+                  }}
+                  className={`w-full text-left px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl border transition-colors text-sm sm:text-base leading-relaxed
+                    ${
+                      selectedOption === opt
+                        ? opt === questions[current].answer
+                          ? "bg-green-500"
+                          : "bg-red-500"
+                        : "bg-transparent hover:bg-slate-400/16"
+                    }
+                  `}
+                >
+                  {opt}
+                </button>
+              ))}
+            </div>
+
+            <div className="flex flex-row justify-between gap-2 mt-4 font-semibold text-slate-300">
               <button
-                key={i}
-                disabled={!!selectedOption}
+                className="px-4 sm:px-8 py-2 border hover:bg-slate-400/10 rounded-xl sm:rounded-2xl font-semibold disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
+                disabled={current === 0}
                 onClick={() => {
-                  setSelectedOption(opt);
-                  if (opt === questions[current].answer) {
-                    setCount((prev) => prev + 1);
-                  }
-                  if (current === questions.length - 1) {
-                    setFinished(true);
-                  }
+                  setSelectedOption("");
+                  setCurrent(current - 1);
                 }}
-                className={`w-full text-left px-4 py-3 my-2 rounded-xl border transition-colors
-                  ${
-                    selectedOption === opt
-                      ? opt === questions[current].answer
-                        ? "bg-green-500"
-                        : "bg-red-500"
-                      : "bg-transparent hover:bg-slate-400/16"
-                  }
-                `}
               >
-                {opt}
+                Prev
               </button>
-            ))}
-          </div>
+              <button
+                className="px-4 sm:px-8 py-2 border hover:bg-slate-400/10 rounded-xl sm:rounded-2xl disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
+                disabled={current === questions.length - 1}
+                onClick={() => {
+                  if (!selectedOption) {
+                    setSkippedQuestions((prev) => {
+                      const alreadySkipped = prev.some(q => q.index === current);
+                      if (!alreadySkipped) {
+                        return [...prev, { index: current, question: questions[current] }];
+                      }
+                      return prev;
+                    });
+                  }
+                  setSelectedOption("");
+                  setCurrent(current + 1);
+                }}
+              >
+                Skip
+              </button>
+            </div>
 
-          <div className="flex flex-row justify-between mt-2 font-semibold text-slate-300">
-            <button
-              className="px-8 py-2 border hover:bg-slate-400/10 rounded-2xl font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
-              disabled={current === 0}
-              onClick={() => {
-                setSelectedOption("");
-                setCurrent(current - 1);
-              }}
-            >
-              Prev
-            </button>
-            <button
-              className="px-8 py-2 border hover:bg-slate-400/10 rounded-2xl disabled:opacity-50 disabled:cursor-not-allowed"
-              disabled={current === questions.length - 1}
-              onClick={() => {
-                setSelectedOption("");
-                setCurrent(current + 1);
-              }}
-            >
-              Skip
-            </button>
-          </div>
-        </section>
+            {/* Review Button */}
+            {current >= 29 && skippedQuestions.length > 0 && (
+              <div className="grid grid-cols-1 gap-2 sm:gap-3 mt-4 pt-4 border-t border-slate-600">
+                <button
+                  onClick={() => {
+                    setIsReviewMode(true);
+                    setReviewIndex(0);
+                  }}
+                  className="w-full px-4 sm:px-6 py-2.5 sm:py-3 bg-yellow-500/20 border border-yellow-500 hover:bg-yellow-500/30 rounded-lg sm:rounded-xl font-semibold text-yellow-400 transition-colors text-sm sm:text-base"
+                >
+                  Review Skipped Questions ({skippedQuestions.length})
+                </button>
+                <button 
+                  className="w-full px-4 sm:px-6 py-2.5 sm:py-3 bg-green-500/20 border border-green-500 hover:bg-green-500/30 rounded-lg sm:rounded-xl font-semibold text-green-400 transition-colors text-sm sm:text-base"
+                  onClick={() => {
+                    setIsReviewMode(false);
+                    setReviewIndex(0);
+                    setFinished(true);
+                  }}
+                >
+                  Show Result
+                </button>
+              </div>
+            )}
+          </section>
+        )}
       </section>
     </div>
   </div>
