@@ -250,7 +250,7 @@ const [reviewIndex, setReviewIndex] = useState(0);
        {isReviewMode ? (
   <section>
     <p className="text-xs sm:text-sm">
-      Skipped Question {reviewIndex + 1} of {skippedQuestions.length}
+      Skipped Question {skippedQuestions[reviewIndex].index + 1} of {skippedQuestions.length}
     </p>
     <p className="text-base sm:text-lg md:text-xl font-semibold my-3 text-start leading-relaxed">
       Q{skippedQuestions[reviewIndex].index + 1}) {skippedQuestions[reviewIndex].question.question}
@@ -289,12 +289,12 @@ const [reviewIndex, setReviewIndex] = useState(0);
                 }
                 // else: stay at same reviewIndex (next question will now be at this index)
               } else {
-                // No more skipped questions, exit review mode
+                // No more skipped questions, exit review mode and show results
                 setIsReviewMode(false);
                 setReviewIndex(0);
-                setCurrent(questions.length - 1);
+                setFinished(true);
               }
-            }, 1500); // Changed to 1.5 seconds - adjust as needed
+            }, 1500);
           }}
           className={`w-full text-left px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl border transition-colors text-sm sm:text-base leading-relaxed
             ${
@@ -310,7 +310,21 @@ const [reviewIndex, setReviewIndex] = useState(0);
         </button>
       ))}
     </div>
-          </section>
+
+    {/* Exit Button */}
+    <div className="flex justify-end mt-4">
+        <button
+        className="px-4 sm:px-8 py-2 border text-slate-300 hover:bg-slate-400/10 rounded-xl sm:rounded-2xl font-semibold text-sm sm:text-base"
+        onClick={() => {
+          setIsReviewMode(false);
+          setReviewIndex(0);
+          setFinished(true);
+        }}
+      >
+       Exit Review
+      </button>
+    </div>
+</section>
         ) : (
           /* Normal Mode */
           <section>
